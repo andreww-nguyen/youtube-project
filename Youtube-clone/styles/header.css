@@ -112,7 +112,7 @@
 .youtube-apps-container:hover .tooltip,
 .notifications-container:hover .tooltip
 {
-  opacity: 1
+  opacity: 1;
 }
 
 .search-icon 
