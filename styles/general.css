@@ -1,0 +1,44 @@
+@media (max-width: 789px)
+{
+  body
+  {
+    padding-left: 16px;
+  }
+}
+
+/* change body's left padding to accomodate for smaller sidebar*/
+@media (min-width: 789.1px) and (max-width: 1349px)
+{
+  body
+  {
+    padding-left: 90px;
+  }
+}
+/* change body's padding to accomodate for larger sidebar*/
+@media (min-width: 1350px)
+{
+  body
+  {
+    padding-left: 260px;
+  }
+}
+
+body
+{
+  font-family: Roboto, Arial;
+  margin: 0px;
+  padding-top: 80px;
+  padding-right: 16px;
+}
+
+p 
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a
+{
+  color: black;
+  text-decoration: none;
+}
