@@ -1,12 +1,13 @@
 @media (max-width: 789px)
 {
+
   body
   {
     padding-left: 16px;
   }
 }
 
-/* change body's left padding to accomodate for smaller sidebar*/
+/* change body's left padding to accomodate for smaller sidebar */
 @media (min-width: 789.1px) and (max-width: 1349px)
 {
   body
@@ -14,14 +15,33 @@
     padding-left: 90px;
   }
 }
-/* change body's padding to accomodate for larger sidebar*/
+/* change body's padding to accomodate for larger sidebar */
 @media (min-width: 1350px)
 {
-  body
+  body 
   {
     padding-left: 260px;
   }
+  
+  body:has(#hamburger:checked) 
+  {
+    padding-left: 90px;
+  }
 }
+
+.grey-background
+{
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.47);
+  z-index: 0;
+  opacity: 0;
+  overscroll-behavior: contain;
+}
+
 
 body
 {
