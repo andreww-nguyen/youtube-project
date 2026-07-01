@@ -285,17 +285,17 @@
 
           <div popover id="profile-menu" class="profile-menu">
             <div class="profile-menu-section">
-              <div class="profile-menu-header">
+              <div class="profile-menu-header" style="pointer-events: none;">
                 <div class="pfp-area">
                   <img class="profile-pic" src="pfps/my-profile.jpg">
                 </div>
 
                 <div class="profile-info">
-                  <p>
+                  <p style="padding-bottom: 5px;">
                     AshenFall
                   </p>
 
-                  <p>
+                  <p style="padding-bottom: 10px;">
                     @ashenfal1
                   </p>
 
@@ -327,7 +327,7 @@
                 </div>
               </a>
               
-              <div class="pop-up-link">
+              <button popovertarget="switch-acc-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -353,7 +353,7 @@
                     </path>
                   </svg>
                 </div>
-              </div>
+              </button>
 
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
@@ -670,6 +670,114 @@
               </div>
             </div>
           </div>
+
+          <div popover="auto" id="switch-acc-menu" class="switch-acc-menu">
+            <div class="profile-menu-section" style="flex-direction: row; padding-left: 8px; align-items: center;">
+              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol" style="padding-left: 5px;"
+              onclick="document.getElementById('switch-acc-menu').hidePopover();">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                  <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
+                    000-2H6.414l5.293-5.292a1 1 0 00-1.414-1.415Z">
+                  </path>
+                </svg>
+              </button>
+
+              <div class="pop-up-desc" style="font-size: 15px; padding-left: 7px;">
+                Accounts
+              </div>
+            </div>
+
+            <div class="profile-menu-section"
+            style="padding: 10px 16px; padding-top: 20px; font-size: 12px; ">
+              <p>
+                Andrew Nguyen
+              </p>
+
+              <p style="padding-top: 5px; color: rgb(114, 114, 114)">
+                andreww.nnguyen@gmail.com
+              </p>
+            </div>
+
+            <div class="profile-menu-section" style="font-size: 13px;">
+              <div class="profile-menu-header">
+                <div class="pfp-area" style="padding-right: 5px;">
+                  <img class="profile-pic" style="width: 50px; height: 50px;" src="pfps/my-profile.jpg">
+                </div>
+
+                <div class="profile-info">
+                  <p>
+                    AshenFall
+                  </p>
+
+                  <p style="color: rgb(114, 114, 114); padding-top: 5px;">
+                    @ashenfal1
+                  </p>
+
+                  <p style="color: rgb(114, 114, 114); padding-top: 5px;">
+                    No subscribers
+                  </p>
+                </div>
+
+                <div style="align-items: center; display: flex; justify-content: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                    <path d="M19.793 5.793 8.5 17.086l-4.293-4.293a1 1 0 10-1.414 1.414L8.5 19.914 21.207 7.207a1
+                      1 0 10-1.414-1.414Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="pop-up-link" style="padding-top: 13px; padding-bottom: 13px; font-size: 15px;">
+                View all channels
+              </div>
+            </div>
+
+            <div class="profile-menu-section">
+              <a href="">
+                <div class="pop-up-link">
+                  <div class="pop-up-icon-area">
+                    <div class="pop-up-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                      height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                        <path d="M12 2a5 5 0 100 10 5 5 0 000-10Zm0 2a3 3 0 110 6 3 3 0 010-6Zm0 9a8 8 0 00-8 8 1
+                          1 0 102 0 6 6 0 019.315-5H16v-1.926A8 8 0 0012 13Zm7 2a1 1 0 00-1 1v2h-2a1 1 0 000 2h2v2a1
+                          1 0 002 0v-2h2a1 1 0 000-2h-2v-2a1 1 0 00-1-1Z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+  
+                  <div class="pop-up-desc">
+                    Add Account
+                  </div>
+                </div>
+              </a>
+              
+              <div class="pop-up-link">
+                <div class="pop-up-icon-area">
+                  <div class="pop-up-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                      <path d="M19 2a2 2 0 012 2v16a2 2 0 01-2 2H9a1 1 0 010-2h10V4H9a1 1 0 010-2h10ZM9.293
+                        7.293a1 1 0 000 1.414L11.586 11H4a1 1 0 000 2h7.586l-2.293 2.293a1 1 0 101.414 1.414L15.414
+                        12l-4.707-4.707a1 1 0 00-1.414 0Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="pop-up-desc">
+                  Sign Out
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          
         </div>
       </div>
     </header>
