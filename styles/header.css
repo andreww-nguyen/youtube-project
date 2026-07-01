@@ -8,9 +8,7 @@
   left: 0px;
   right: 0px;
   background-color: white;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(228, 228, 228);
+  border-bottom: 1px solid rgb(228, 228, 228);
   z-index: 100;
 }
 
@@ -74,9 +72,9 @@
 
 .search-button, 
 .voice-search-button,
-.upload-container,
+.create-button,
 .youtube-apps-container,
-.notifications-container
+.notifications-button
 {
   position: relative;
   display: flex;
@@ -84,28 +82,56 @@
   justify-content: center;
 }
 
-.upload-container
+.create-button
 {
   background-color: rgb(240, 240, 240);
   padding-right: 14px;
   padding-left: 13px;
   border-radius: 20px;
+  position: relative;
+  border-style: none;
+  anchor-name: --create-button;
+
+  font-weight: 550;
+  font-size: 14px;
+  font-family: Roboto, Arial;
 }
-.upload-container .icon-area
+
+.create-button .icon-area
 {
   width: 30px;
 }
 
-.upload-container:hover
+.create-button:hover
 {
   background-color: rgb(225, 225, 225);
   cursor: pointer;
 }
 
-.upload-text
+.create-menu
 {
-  font-size: 14px;
-  font-weight: 500;
+  margin: 0px;
+  inset: auto;
+  padding: 0px;
+
+  width: 175px;
+  background-color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition-delay: 0s;
+  border-style: none;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  position-anchor: --create-button;
+  top: anchor(bottom);
+  left: anchor(left);
+  margin-block-start: 7px;
+}
+
+.create-menu:popover-open
+{
+  display: flex;
+  flex-direction: column;
 }
 
 .search-button 
@@ -121,11 +147,17 @@
   border-radius: 0px 20px 20px 0px;
 }
 
+.search-button:hover
+{
+  cursor: pointer;
+  background-color: rgb(235, 235, 235);
+}
+
 .search-button .tooltip, 
 .voice-search-button .tooltip,
-.upload-container .tooltip,
+.create-button .tooltip,
 .youtube-apps-container .tooltip,
-.notifications-container .tooltip
+.notifications-button .tooltip
 {
   position: absolute;
   background-color: grey;
@@ -145,9 +177,9 @@
 
 .search-button:hover .tooltip,
 .voice-search-button:hover .tooltip,
-.upload-container:hover .tooltip,
+.create-button:hover .tooltip,
 .youtube-apps-container:hover .tooltip,
-.notifications-container:hover .tooltip
+.notifications-button:hover .tooltip
 {
   opacity: 1;
 }
@@ -164,6 +196,12 @@
   border-radius: 20px;
   border: none;
   background-color: rgb(245, 245, 245);
+}
+
+.voice-search-button:hover
+{
+  cursor: pointer;
+  background-color: rgb(225, 225, 225);
 }
 
 .voice-search-icon 
@@ -186,10 +224,6 @@
   height: 24px;
 }
 
-.youtube-apps-icon
-{
-  height: 24px;
-}
 
 .notifications-icon
 {
@@ -197,17 +231,20 @@
   position: relative;
 }
 
-.notifications-container
+.notifications-button
 {
   width: 30px;
   height: 30px;
   position: relative;
   background-color: white;
   border-radius: 20px;
-  padding: 5px;
+  border-style: none;
+  padding: 20px;
+
+  anchor-name: --notification-button
 }
 
-.notifications-container:hover
+.notifications-button:hover
 {
   cursor: pointer;
   background-color: rgb(225, 225, 225);
@@ -229,9 +266,93 @@
   border-style: solid;
 }
 
-.notifications-icon
+.notifications-pop-up
 {
-  height: 24px;
+  margin: 0px;
+  inset: auto;
+
+  background-color: white;
+  width: 490px;
+  height: 650px;
+  padding: 0px;
+  border-style: none;
+  border-radius: 13px;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+
+  position-anchor: --notification-button;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-top: 7px;
+}
+
+.notifications-pop-up:popover-open
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.notifications-header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  padding-left: 16px;
+}
+
+.settings-icon-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  padding-bottom: 4px;
+  border-radius: 20px;
+}
+
+.settings-icon-container:hover
+{
+  background-color: rgb(225, 225, 225);
+}
+
+.settings-icon
+{
+  width: 24px;
+}
+
+.big-notification-container
+{
+  width: 120px;
+  height: 120px;
+  padding-bottom: 25px;
+}
+
+.big-notification-container svg path 
+{
+  fill: grey;
+}
+
+.notifications-main-body
+{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 1px solid rgb(228, 228, 228);
+}
+
+.profile-button
+{
+  background-color: white;
+  border-style: none;
+  anchor-name: --profile-button;
+}
+
+.profile-button:hover
+{
+  cursor: pointer;
 }
 
 .current-user-pic
@@ -240,3 +361,71 @@
   width: 32px;
   border-radius: 18px;
 }
+
+.profile-menu
+{
+  margin: 0px;
+  inset: auto;
+  padding: 0px;
+
+  width: 300px;
+  border-style: none;
+  border-radius: 15px;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+
+  position-anchor: --profile-button;
+  top: anchor(top);
+  right: anchor(left);
+  margin-right: 15px;
+}
+
+.profile-menu:popover-open
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-menu-section
+{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profile-menu-header
+{
+  display: flex;
+  flex-direction: row;
+  padding: 8px 16px;
+}
+
+.profile-container .profile-pic
+{
+  width: 40px;
+  height: 40px;
+}
+
+.pfp-area
+{
+  height: 72px;
+  width: 55px;
+}
+
+.profile-info
+{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-container .pop-up-icon-area
+{
+  padding-right: 5px;
+}
+
+
+
