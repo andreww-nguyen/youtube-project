@@ -452,7 +452,7 @@
                 </div>
               </a>
         
-              <div class="pop-up-link">
+              <button popovertarget="appearance-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +478,7 @@
                     </path>
                   </svg>
                 </div>
-              </div>
+              </button>
 
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
@@ -671,9 +671,9 @@
             </div>
           </div>
 
-          <div popover="auto" id="switch-acc-menu" class="switch-acc-menu">
-            <div class="profile-menu-section" style="flex-direction: row; padding-left: 8px; align-items: center;">
-              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol" style="padding-left: 5px;"
+          <div popover id="switch-acc-menu" class="switch-acc-menu">
+            <div class="submenu-header">
+              <button popovertarget="profile-menu" class="submenu-icon-area arrow-symbol"
               onclick="document.getElementById('switch-acc-menu').hidePopover();">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
@@ -683,12 +683,12 @@
                 </svg>
               </button>
 
-              <div class="pop-up-desc" style="font-size: 15px; padding-left: 7px;">
+              <div class="submenu-desc">
                 Accounts
               </div>
             </div>
 
-            <div class="profile-menu-section"
+            <div class="submenu-section"
             style="padding: 10px 16px; padding-top: 20px; font-size: 12px; ">
               <p>
                 Andrew Nguyen
@@ -699,7 +699,7 @@
               </p>
             </div>
 
-            <div class="profile-menu-section" style="font-size: 13px;">
+            <div class="submenu-section" style="font-size: 13px;">
               <div class="profile-menu-header">
                 <div class="pfp-area" style="padding-right: 5px;">
                   <img class="profile-pic" style="width: 50px; height: 50px;" src="pfps/my-profile.jpg">
@@ -729,16 +729,16 @@
                 </div>
               </div>
 
-              <div class="pop-up-link" style="padding-top: 13px; padding-bottom: 13px; font-size: 15px;">
+              <div class="submenu-link" style="padding-top: 13px; padding-bottom: 13px; font-size: 15px;">
                 View all channels
               </div>
             </div>
 
-            <div class="profile-menu-section">
+            <div class="submenu-section">
               <a href="">
-                <div class="pop-up-link">
-                  <div class="pop-up-icon-area">
-                    <div class="pop-up-icon">
+                <div class="submenu-link">
+                  <div class="submenu-icon-area">
+                    <div class="submenu-icon">
                       <svg xmlns="http://www.w3.org/2000/svg"
                       height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                         <path d="M12 2a5 5 0 100 10 5 5 0 000-10Zm0 2a3 3 0 110 6 3 3 0 010-6Zm0 9a8 8 0 00-8 8 1
@@ -749,15 +749,15 @@
                     </div>
                   </div>
   
-                  <div class="pop-up-desc">
+                  <div class="submenu-desc">
                     Add Account
                   </div>
                 </div>
               </a>
               
-              <div class="pop-up-link">
-                <div class="pop-up-icon-area">
-                  <div class="pop-up-icon">
+              <div class="submenu-link">
+                <div class="submenu-icon-area">
+                  <div class="submenu-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
                     height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                       <path d="M19 2a2 2 0 012 2v16a2 2 0 01-2 2H9a1 1 0 010-2h10V4H9a1 1 0 010-2h10ZM9.293
@@ -768,8 +768,66 @@
                   </div>
                 </div>
 
-                <div class="pop-up-desc">
+                <div class="submenu-desc">
                   Sign Out
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div popover id="appearance-menu" class="appearance-menu">
+            <div class="submenu-header">
+              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
+              onclick="document.getElementById('appearance-menu').hidePopover();">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                  <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
+                    000-2H6.414l5.293-5.292a1 1 0 00-1.414-1.415Z">
+                  </path>
+                </svg>
+              </button>
+
+              <div class="pop-up-desc">
+                Appearance
+              </div>
+            </div>
+
+            <div class="submenu-section">
+              <p style="color: rgb(114, 114, 114); font-size: 14px; display: flex; flex: 1; justify-content: center;
+              padding-block: 16px;">
+                Setting applies to this browser only
+              </p>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Use Device Theme
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Dark Theme
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area">
+                  <div class="submenu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                      <path d="M19.793 5.793 8.5 17.086l-4.293-4.293a1 1 0 10-1.414 1.414L8.5 19.914 21.207 7.207a1
+                        1 0 10-1.414-1.414Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="submenu-desc">
+                  Light Theme
                 </div>
               </div>
             </div>

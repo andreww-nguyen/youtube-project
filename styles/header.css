@@ -396,7 +396,8 @@
   border-style: none;
 }
 
-.profile-menu-section
+.profile-menu-section,
+.submenu-section
 {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -443,7 +444,8 @@
   padding-right: 5px;
 }
 
-.switch-acc-menu
+.switch-acc-menu,
+.appearance-menu
 {
   margin: 0px;
   inset: auto;
@@ -462,7 +464,8 @@
   margin-top: 7px;
 }
 
-.switch-acc-menu:popover-open
+.switch-acc-menu:popover-open,
+.appearance-menu:popover-open
 {
   display: flex;
   flex-direction: column;
@@ -479,3 +482,59 @@
   cursor: pointer;
 }
 
+.submenu-header
+{
+  display: flex;
+  flex-direction: row;
+  padding-left: 8px;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.submenu-header .pop-up-desc
+{
+  font-size: 16px;
+}
+
+.menu-link,
+.submenu-link
+{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 2px 16px;
+}
+
+.menu-link:hover,
+.submenu-link:hover
+{
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.menu-icon-area,
+.submenu-icon-area
+{
+  display: flex;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.menu-icon,
+.submenu-icon
+{
+  height: 24px;
+  width: 24px;
+  border-radius: 12px;
+}
+
+.menu-desc,
+.submenu-desc
+{
+  flex: 1;
+  font-size: 14px;
+  white-space: nowrap;
+}
