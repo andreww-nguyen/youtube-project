@@ -480,7 +480,8 @@
                 </div>
               </button>
 
-              <div class="pop-up-link">
+              <button popovertarget="language-menu" class="pop-up-link"
+              onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -510,7 +511,7 @@
                     </path>
                   </svg>
                 </div>
-              </div>
+              </button>
 
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
@@ -833,9 +834,711 @@
             </div>
           </div>
 
+          <div popover id="language-menu" class="language-menu">
+            <div class="submenu-header">
+              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
+              onclick="document.getElementById('language-menu').hidePopover();">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                  <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
+                    000-2H6.414l5.293-5.292a1 1 0 00-1.414-1.415Z">
+                  </path>
+                </svg>
+              </button>
 
+              <div class="pop-up-desc">
+                Display Language
+              </div>
+            </div>
 
-          
+            <div class="submenu-section">
+              <p style="color: rgb(114, 114, 114); font-size: 14px; display: flex; flex: 1; justify-content: center;
+              padding-block: 16px;">
+                Buttons and display text on this browser
+              </p>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Afrikaans
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Azərbaycan
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Bahasa Indonesia
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Bahasa Malaysia
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Bosanski
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Català
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Čeština
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Dansk
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Deutsch
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Eesti
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  English (India)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  English (UK)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area">
+                  <div class="submenu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                    height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                      <path d="M19.793 5.793 8.5 17.086l-4.293-4.293a1 1 0 10-1.414 1.414L8.5 19.914 21.207 7.207a1
+                        1 0 10-1.414-1.414Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="submenu-desc">
+                  English (US)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Español (España)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Español (Latinoamérica)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Español (US)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Euskara
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Filipino
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Français
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Français (Canada)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Galego
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Hrvatski
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  IsiZulu
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Íslenska
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Italiano
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Kiswahili
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Latviešu valoda
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Lietuvių
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Magyar
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Nederlands
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Norsk
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  O'zbek
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Polski
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Português
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Português (Brasil)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Română
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Shqip
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Slovenčina
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Slovenščina
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Srpski
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Srpski
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Svenska
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Tiếng Việt
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Türkçe
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Беларуская
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Беларуская
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Български
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Кыргызча
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Қазақ Тілі
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Македонски
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Монгол
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Русский
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Српски
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Українська
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Ελληνικά
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  Հայերեն
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  עברית
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  اردو
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  العربية
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  فارسی
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  नेपाली
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  मराठी
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  हिन्दी
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  অসমীয়া
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  বাংলা
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ਪੰਜਾਬੀ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ગુજરાતી
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ଓଡ଼ିଆ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  தமிழ்
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  తెలుగు
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ಕನ್ನಡ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  മലയാളം
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  සිංහල
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ภาษาไทย
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ລາວ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ဗမာ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ქართული
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  አማርኛ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  ខ្មែរ
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  中文 (简体)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  中文 (繁體)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  中文 (香港)
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  日本語
+                </div>
+              </div>
+
+              <div class="submenu-link">
+                <div class="submenu-icon-area"></div>
+
+                <div class="submenu-desc">
+                  한국어
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
