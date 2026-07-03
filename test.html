@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+  <style>
+    .shortcut-modal-overlay
+    {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background-color: rgba(0, 0, 0, 0.35);
+      font-family: Roboto, Arial;
+    }
+
+    .modal
+    {
+      background-color: white;
+      width: 84%;
+      height: 90%;
+      border-radius: 15px;
+      padding: 16px;
+    }
+
+    .modal-title
+    {
+      display: flex;
+      align-items: center;
+      font-size: 25px;
+      font-weight: bold;
+      height: 60px;
+      padding-left: 26px;
+    }
+
+    .modal-content
+    {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    
+
+    .modal-section
+    {
+      display: flex;
+      flex-direction: column;
+      padding-left: 16px;
+      padding-right: 30px;
+      padding-block: 30px;
+      color: grey;
+      font-size: 12px;
+    }
+
+    .modal-section-title
+    {
+      font-weight: 500;
+      border-bottom: 1px solid grey;
+      padding-bottom: 16px;
+      padding-left: 10px;
+    }
+
+    .modal-row
+    {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      height: 36px;
+      border-bottom: 1px solid grey;
+
+    }
+
+    .modal-row-desc
+    {
+      width: 450px;
+      padding-left: 10px;
+    }
+
+    .modal-row-key
+    {
+      flex: 1;
+      font-weight: 500;
+      color: black;
+      font-family: Roboto-mono, monospace;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="shortcut-modal-overlay">
+    <div class="modal">
+      <div class="modal-title">
+        Keyboard Shortcuts
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-section">
+          <div class="modal-section-title">
+            PLAYBACK
+          </div>
+
+          <div class="modal-row">
+            <div class="modal-row-desc">
+              Toggle play/pause
+            </div>
+
+            <div class="modal-row-key">
+              k
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <div class="modal-section-title">
+            General
+          </div>
+
+          <div class="modal-row">
+            <div class="modal-row-desc">
+              Toggle full screen
+            </div>
+
+            <div class="modal-row-key">
+              f
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
