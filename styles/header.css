@@ -544,7 +544,8 @@
 
 }
 
-.language-menu
+.language-menu,
+.location-menu
 {
   margin: 0px;
   inset: auto;
@@ -562,11 +563,13 @@
   top: 10px;
   bottom: 0;
   overflow-y: auto;
-  max-height: calc(100vh);
+  max-height: calc(100vh - 10px);
   overscroll-behavior: contain;
+  
 }
 
-.langauge-menu:popover-open
+.langauge-menu:popover-open,
+.location-menu:popover-open
 {
   display: flex;
   flex-direction: column;
