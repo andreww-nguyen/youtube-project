@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -576,7 +580,8 @@
                 </div>
               </button>
 
-              <div class="pop-up-link">
+              <button popovertarget="shortcut-modal" class="pop-up-link"
+              onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -600,7 +605,7 @@
                 <div class="pop-up-desc">
                   Keyboard Shortcuts
                 </div>
-              </div>
+              </button>
             </div>
 
             <div class="profile-menu-section">
@@ -2494,16 +2499,336 @@
                   Zimbabwe
                 </div>
               </div>
-
-              
-
-              
-
             </div>
           </div>
 
+          <div popover id="shortcut-modal" class="shortcut-modal">
+            <div class="modal-title">
+              Keyboard Shortcuts
+            </div>
+
+            <div class="modal-content">
+              <div class="modal-section">
+                <div class="modal-section-title">
+                  PLAYBACK
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Toggle play/pause
+                  </div>
+      
+                  <div class="modal-row-key">
+                    k
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Rewind 10 seconds
+                  </div>
+      
+                  <div class="modal-row-key">
+                    j
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Fast forward 10 seconds
+                  </div>
+
+                  <div class="modal-row-key">
+                    l
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Previous video
+                  </div>
+
+                  <div class="modal-row-key">
+                    P (SHIFT+p)
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Next video
+                  </div>
+
+                  <div class="modal-row-key">
+                    N (SHIFT+n)
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Previous frame (while paused)
+                  </div>
+
+                  <div class="modal-row-key">
+                    ,
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Next frame (while paused)
+                  </div>
+
+                  <div class="modal-row-key">
+                    .
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Decrease playback rate
+                  </div>
+
+                  <div class="modal-row-key">
+                    &lt; (SHIFT+,)
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Increase playback rate
+                  </div>
+
+                  <div class="modal-row-key">
+                    &gt; (SHIFT+,)
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Seek to specific point in the video (7 advances to 70% of duration)
+                  </div>
+
+                  <div class="modal-row-key">
+                    0..9
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Seek to previous chapter
+                  </div>
+
+                  <div class="modal-row-key">
+                    CONTROL + &larr;
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Seek to next chapter
+                  </div>
+
+                  <div class="modal-row-key">
+                    CONTROL + &rarr;
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-section">
+                <div class="modal-section-title">
+                  GENERAL
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Toggle full screen
+                  </div>
+      
+                  <div class="modal-row-key">
+                    f
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Toggle theater mode
+                  </div>
+      
+                  <div class="modal-row-key">
+                    t
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Toggle miniplayer
+                  </div>
+      
+                  <div class="modal-row-key">
+                    i
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Close miniplayer or current dialog
+                  
+                  </div>
+      
+                  <div class="modal-row-key">
+                    ESCAPE
+                  </div>
+                </div>
+                
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Toggle mute
+                  </div>
+      
+                  <div class="modal-row-key">
+                    m
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-section">
+                <div class="modal-section-title">
+                  SUBTITLES AND CLOSED CAPTIONS
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    If the video supports captions, toggle captions ON/OFF
+                  </div>
+      
+                  <div class="modal-row-key">
+                    c
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Rotate through different text opacity levels
+                  </div>
+      
+                  <div class="modal-row-key">
+                    o
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Rotate through different window opacity levels
+                  </div>
+      
+                  <div class="modal-row-key">
+                    w
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Rotate through font sizes (increasing)
+                  </div>
+      
+                  <div class="modal-row-key">
+                    +
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Rotate through font sizes (decreasing)
+                  </div>
+      
+                  <div class="modal-row-key">
+                    -
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-section">
+                <div class="modal-section-title">
+                  SPHERICAL VIDEOS
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Pan up
+                  </div>
+      
+                  <div class="modal-row-key">
+                    w
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Pan left
+                  </div>
+      
+                  <div class="modal-row-key">
+                    a
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Pan down
+                  </div>
+      
+                  <div class="modal-row-key">
+                    s
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Pan right
+                  </div>
+      
+                  <div class="modal-row-key">
+                    d
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Zoom in
+                  </div>
+      
+                  <div class="modal-row-key">
+                    + on numpad or ]
+                  </div>
+                </div>
+
+                <div class="modal-row">
+                  <div class="modal-row-desc">
+                    Zoom out
+                  </div>
+      
+                  <div class="modal-row-key">
+                    - on numpad or [
+                  </div>
+                </div>
+                
+
+              </div>
 
 
+
+
+
+            </div>
+
+            <div class="modal-footer">
+              <button class="dismiss-button" onclick="document.getElementById('shortcut-modal').hidePopover();">
+                Dismiss
+              </button>
+            </div>
+          </div>
+          
+          <div class="overlay"></div>
         </div>
       </div>
     </header>
@@ -3516,20 +3841,23 @@
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
-          <div class="sidebar-title">
-            Subscriptions
+        <a href="https://www.youtube.com/feed/subscriptions">
+          <div class="sidebar-title-container">
+            <div class="sidebar-title">
+              Subscriptions
+            </div>
+  
+            <div class="arrow-symbol">
+              <svg xmlns="http://www.w3.org/2000/svg" 
+              height="16" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                <path d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914
+                  12l-6.707-6.707a1 1 0 00-1.414 0Z">
+                </path>
+              </svg>
+            </div>
           </div>
-
-          <div class="arrow-symbol">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-            height="16" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-              <path d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914
-                12l-6.707-6.707a1 1 0 00-1.414 0Z">
-              </path>
-            </svg>
-          </div>
-        </div>
+        </a>
+        
 
         <a  href="https://www.youtube.com/@ohnepixelraw">
           <div class="sidebar-link">
@@ -3569,20 +3897,22 @@
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
-          <div class="sidebar-title">
-            You
+        <a href="https://www.youtube.com/feed/you">
+          <div class="sidebar-title-container">
+            <div class="sidebar-title">
+              You
+            </div>
+  
+            <div class="arrow-symbol">
+              <svg xmlns="http://www.w3.org/2000/svg" 
+              height="16" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                <path d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914
+                  12l-6.707-6.707a1 1 0 00-1.414 0Z">
+                </path>
+              </svg>
+            </div>
           </div>
-
-          <div class="arrow-symbol">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-            height="16" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-              <path d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914
-                12l-6.707-6.707a1 1 0 00-1.414 0Z">
-              </path>
-            </svg>
-          </div>
-        </div>
+        </a>
 
         <a href="">
           <div class="sidebar-link">
@@ -3716,7 +4046,7 @@
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
+        <div class="sidebar-title-container" style="pointer-events: none;">
           <div class="sidebar-title">
             Explore
           </div>
