@@ -513,7 +513,8 @@
                 </div>
               </button>
 
-              <div class="pop-up-link">
+              <button popovertarget="restricted-menu" class="pop-up-link"
+              onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -539,7 +540,7 @@
                     </path>
                   </svg>
                 </div>
-              </div>
+              </button>
 
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
@@ -788,7 +789,7 @@
                 </svg>
               </button>
 
-              <div class="pop-up-desc">
+              <div class="submenu-desc">
                 Appearance
               </div>
             </div>
@@ -846,7 +847,7 @@
                 </svg>
               </button>
 
-              <div class="pop-up-desc">
+              <div class="submenu-desc">
                 Display Language
               </div>
             </div>
@@ -1539,6 +1540,56 @@
               </div>
             </div>
           </div>
+
+          <div popover id="restricted-menu" class="restricted-menu">
+            <div class="submenu-header">
+              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
+              onclick="document.getElementById('restricted-menu').hidePopover();">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                  <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
+                    000-2H6.414l5.293-5.292a1 1 0 00-1.414-1.415Z">
+                  </path>
+                </svg>
+              </button>
+
+              <div class="submenu-desc">
+                Restricted Mode
+              </div>
+            </div>
+
+            <div class="submenu-section" style="font-size: 14px; padding-left: 16px; padding-right: 20px;">
+              <p style="padding-top: 8px; line-height: 20px;">
+                This helps hide potentially mature videos. No filter is 100% accurate.
+              </p>
+
+              <p style="padding-block: 18px;">
+                This setting only applies to this browser.
+              </p>
+
+              <div class="toggle-restricted-container">
+                <div style="font-weight: 500; color: rgb(93, 93, 93);">
+                  ACTIVATE RESTRICTED MODE
+                </div>
+
+                <div class="toggle-restricted-button">
+                  <input type="checkbox" id="test" class="restricted-toggle">
+                  <label for="test" class="label">
+                    <div class="ball">
+
+                    </div>
+                  </label>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
         </div>
       </div>
     </header>
