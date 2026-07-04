@@ -219,13 +219,10 @@
   flex-direction: column;
 }
 
-
-
 .upload-icon
 {
   height: 24px;
 }
-
 
 .notifications-icon
 {
@@ -375,6 +372,8 @@
   border-style: none;
   border-radius: 15px;
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+  max-height: calc(100vh - 10px);
+  overflow-y: auto;
 
   position-anchor: --profile-button;
   top: anchor(top);
@@ -672,6 +671,7 @@
   margin: auto;
   inset: 0;
   border-style: none;
+  z-index: 700;
 
   background-color: white;
   width: 83%;
@@ -691,6 +691,7 @@
   right: 0px;
   display: none;
   overscroll-behavior: contain;
+  z-index: 700;
 }
 
 .shortcut-modal:popover-open
@@ -754,7 +755,7 @@
 
 .modal-row-desc
 {
-  width: 450px;
+  width: 75%;
   padding-left: 6px;
 }
 

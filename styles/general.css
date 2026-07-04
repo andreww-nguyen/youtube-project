@@ -37,7 +37,6 @@
   left: 0px;
   right: 0px;
   background-color: rgba(0, 0, 0, 0.47);
-  z-index: 0;
   display: none;
   overscroll-behavior: contain;
 }
