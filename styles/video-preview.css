@@ -1,10 +1,3 @@
-.video-grid 
-{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 13px;
-}
-
 @media (max-width: 560px)
 {
   .video-grid
@@ -34,6 +27,14 @@
   {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+.video-grid 
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 13px;
+  margin-bottom: 15px;
 }
 
 .video-preview
@@ -104,4 +105,172 @@
 .channel-name
 {
   margin-bottom: 4px;
+}
+
+.shorts-container
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.shorts-container-title
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+}
+
+.shorts-container-title-left
+{
+  display: flex;
+  align-items: center;
+}
+
+.shorts-title-button,
+.shorts-menu-button-1,
+.shorts-menu-button-2,
+.shorts-menu-button-3,
+.shorts-menu-button-4,
+.shorts-menu-button-5
+{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.shorts-title-button
+{
+  anchor-name: --shorts-title-button;
+}
+
+.shorts-menu-button-1
+{
+  anchor-name: --shorts-menu-button-1;
+}
+
+.shorts-menu-button-2
+{
+  anchor-name: --shorts-menu-button-2;
+}
+
+.shorts-menu-button-3
+{
+  anchor-name: --shorts-menu-button-3;
+}
+
+.shorts-menu-button-4
+{
+  anchor-name: --shorts-menu-button-4;
+}
+
+.shorts-menu-button-5
+{
+  anchor-name: --shorts-menu-button-5;
+}
+
+
+.shorts-title-button:hover
+{
+  background-color: rgb(240, 240, 240);
+}
+
+.shorts-settings,
+.shorts-menu-1,
+.shorts-menu-2,
+.shorts-menu-3,
+.shorts-menu-4,
+.shorts-menu-5
+{
+  margin: 0px;
+  inset: auto;
+  padding: 0px;
+  padding-right: 10px;
+  background-color: white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-style: none;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-block-start: 7px;
+  overscroll-behavior: contain;
+}
+
+.shorts-settings:popover-open,
+.shorts-menu-1:popover-open,
+.shorts-menu-2:popover-open,
+.shorts-menu-3:popover-open,
+.shorts-menu-4:popover-open,
+.shorts-menu-5:popover-open
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.shorts-settings
+{
+  position-anchor: --shorts-title-button;
+}
+
+.shorts-menu-1
+{
+  position-anchor: --shorts-menu-button-1;
+}
+
+.shorts-grid
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 15px;
+  margin-bottom: 15px;
+}
+
+.shorts-preview
+{
+  padding: 7px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.shorts-preview:hover
+{
+  background-color: rgb(235, 235, 235);
+}
+
+.shorts-thumbnail-row
+{
+  margin-bottom: 8px;
+}
+
+.shorts-thumbnail
+{
+  width: 100%;
+  border-radius: 13px;
+}
+
+.shorts-info
+{
+  display: grid;
+  grid-template-columns: 4.5fr 1fr;
+  margin-bottom: 5px;
+}
+
+.shorts-title
+{
+  font-weight: 500;
+  line-height: 22px;
+  max-height: 44px;
+  overflow: hidden; 
+}
+
+.shorts-views
+{
+  font-size: 14px;
+  color: rgb(96, 96, 96);
 }
