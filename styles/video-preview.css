@@ -1,3 +1,4 @@
+/* One video per row */
 @media (max-width: 560px)
 {
   .video-grid
@@ -5,6 +6,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Two videos per row */
 @media (min-width: 560.1px) and (max-width: 1099px)
 {
   .video-grid
@@ -13,6 +16,7 @@
   }
 }
 
+/* Three videos per row */
 @media (min-width: 1099.1px) and (max-width: 2999px)
 {
   .video-grid 
@@ -21,6 +25,7 @@
   }
 }
 
+/* Four videos per row */
 @media (min-width: 2999.1px)
 {
   .video-grid

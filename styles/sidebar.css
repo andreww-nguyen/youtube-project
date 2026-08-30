@@ -8,9 +8,14 @@
   left: 0px;
   width: 226px;
   padding-left: 12px;
+
+  /* Creates a responsive sidebar. The height will always be 100% 
+  of the viewer port height. */
   max-height: calc(100vh);
   overflow-y: scroll;
   
+  /* This ensures that the rest of the page content does not 
+  scroll when we scroll inside the sidebar. */
   overscroll-behavior: contain;
 }
 

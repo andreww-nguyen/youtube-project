@@ -10,22 +10,30 @@
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/video-preview.css">
 
+    <!-- font family: Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- font family: Roboto Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <!-- inputs and labels for the functionality of the hamburger icon. Inputs and labels
+    are linked to a button to make it work (checkbox hack) -->
     <input type="checkbox" id="grey-background" hidden>
     <input type="checkbox" id="hamburger" hidden>
     <label for="hamburger" class="grey-background"></label>
 
-    <!-- Credits to Youtube.com for sidebar-icons (copied directly from inspect element) -->
+    <!-- Credits to Youtube.com for ALL sidebar-icons (copied directly from inspect element) -->
+
+    <!-- smaller version of the sidebar. Displayed when the user clicks the hamburger icon
+    or when the screen size is small enough. -->
     <nav class="small-sidebar">
+      <!-- Youtube Home link -->
       <a  href="https://www.youtube.com/">
         <div class="small-sidebar-link">
           <div class="small-icon-area">
@@ -43,6 +51,7 @@
         </div>
       </a>
       
+      <!-- Youtube Shorts link -->
       <a  href="https://www.youtube.com/shorts/">
         <div class="small-sidebar-link">
           <div class="small-icon-area">
@@ -63,6 +72,7 @@
         </div>
       </a>
 
+      <!-- Subscriptions -->
       <div class="subscriptions">
         <a  href="https://www.youtube.com/feed/subscriptions">
           <div class="small-sidebar-link">
@@ -81,6 +91,8 @@
           </div>
         </a>
 
+        <!-- pop up is originally hidden (opacity: 0). When the subscriptions link is 
+        hovered over, the pop up is displayed. -->
         <div class="pop-up">
           <div class="pop-up-title">
             Subscriptions
@@ -140,6 +152,8 @@
           </div>
         </a>
 
+        <!-- Like the subscriptions pop up, theis pop up is initially hidden from the page.
+        This pop up will only display when the You link is hovered over. -->
         <div class="pop-up">
           <div class="pop-up-title">
             You
@@ -272,8 +286,12 @@
       </div>
     </nav>
 
+    <!-- Very similar to big-sidebar. However, this comes with its own header. Only displayed when
+    the screen conditions are met OR if the user displays with the hamburger icon. -->
     <nav class="big-sidebar-v2">
       <div class="header-sidebar">
+        <!-- hides/ displays the big-sidebar-v2 and displays/ hides the gray background.
+        Utilizes the checkbox hack for these functions. -->
         <label class="hamburger-menu-container" for="hamburger">
           <svg xmlns="http://www.w3.org/2000/svg"
           height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
@@ -283,7 +301,7 @@
           </svg>
         </label>
 
-        <!-- Link to Youtube -->
+        <!-- Youtube Logo link -->
         <a href="https://www.youtube.com/" target="">
           <div class="youtube-logo">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -345,6 +363,7 @@
         </a>
       </div>
       
+      <!-- Youtube Home link -->
       <div class="sidebar-section">
         <a  href="https://www.youtube.com/">
           <div class="sidebar-link-home">
@@ -362,6 +381,7 @@
           </div>
         </a>
         
+        <!-- Youtube shorts -->
         <a  href="https://www.youtube.com/shorts/">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -383,6 +403,7 @@
         </a>
       </div>
 
+      <!-- Subscriptions link -->
       <div class="sidebar-section">
         <div class="sidebar-title-container">
           <div class="sidebar-title">
@@ -399,6 +420,7 @@
           </div>
         </div>
 
+        <!-- Ohnepixel Raw channel link -->
         <a  href="https://www.youtube.com/@ohnepixelraw">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -410,7 +432,8 @@
             </div>
           </div>
         </a>
-        
+
+        <!-- Ohnepixel channel link -->
         <a  href="https://www.youtube.com/@ohnepixel">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -423,6 +446,7 @@
           </div>
         </a>
         
+        <!-- moomoocowjonny channel link -->
         <a  href="https://www.youtube.com/@moomoocowjonny">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -436,6 +460,7 @@
         </a>
       </div>
 
+      <!-- You link -->
       <div class="sidebar-section">
         <div class="sidebar-title-container">
           <div class="sidebar-title">
@@ -470,6 +495,7 @@
           </div>
         </a>
         
+        <!-- History link -->
         <a  href="https://www.youtube.com/feed/history">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -488,6 +514,7 @@
           </div>
         </a>
 
+        <!-- Playlists link -->
         <a  href="https://www.youtube.com/feed/playlists">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -505,6 +532,7 @@
           </div>
         </a>
         
+        <!-- Watch Later link -->
         <a  href="https://www.youtube.com/playlist?list=WL">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -523,6 +551,7 @@
           </div>
         </a>
         
+        <!-- Liked Videos link -->
         <a  href="https://www.youtube.com/playlist?list=LL">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -563,6 +592,7 @@
           </div>
         </a>
         
+        <!-- Downloads link -->
         <a  href="https://www.youtube.com/feed/downloads">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -581,6 +611,7 @@
         </a>
       </div>
 
+      <!-- Explore link -->
       <div class="sidebar-section">
         <div class="sidebar-title-container">
           <div class="sidebar-title">
@@ -588,6 +619,7 @@
           </div>
         </div>
 
+        <!-- Shopping link -->
         <a  href="https://www.youtube.com/channel/UCkYQyvc_i9hXEo4xic9Hh2g">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -608,6 +640,7 @@
           </div>
         </a>
         
+        <!-- Music link -->
         <a  href="https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -626,6 +659,7 @@
           </div>
         </a>
 
+        <!-- Movies & TV link -->
         <a  href="https://www.youtube.com/feed/storefront">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -652,7 +686,9 @@
         'Show less' labels utilize the checkbox hack. -->
 
         <input type="checkbox" id="toggle-v2" hidden>
-        <a class="link extra" href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
+
+        <!-- Live link -->
+        <a class="extra" href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
           <div class="sidebar-link">
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -673,7 +709,8 @@
           </div>
         </a>
         
-        <a class="link extra" href="https://www.youtube.com/gaming">
+        <!-- Gaming link -->
+        <a class="extra" href="https://www.youtube.com/gaming">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -693,7 +730,8 @@
           </div>
         </a>
         
-        <a class="link extra" href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"> 
+        <!-- News link -->
+        <a class="extra" href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"> 
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -712,7 +750,8 @@
           </div>
         </a>
         
-        <a class="link extra" href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
+        <!-- Sports link -->
+        <a class="extra" href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -732,7 +771,8 @@
           </div>
         </a>
         
-        <a class="link extra" href="https://www.youtube.com/feed/courses_destination">
+        <!-- Courses link -->
+        <a class="extra" href="https://www.youtube.com/feed/courses_destination">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -751,7 +791,8 @@
           </div>
         </a>
         
-        <a class="link extra" href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
+        <!-- Fashion and Beauty Link  -->
+        <a class="extra" href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -770,6 +811,7 @@
           </div>
         </a>
         
+        <!-- Podcasts Link -->
         <a class="link extra" href="https://www.youtube.com/podcasts">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -788,6 +830,7 @@
           </div>
         </a>
         
+        <!-- Playables Link -->
         <a class="link extra" href="https://www.youtube.com/playables">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -811,6 +854,8 @@
           </div>
         </a>
         
+        <!-- Show more button. Pressing on the show more button will expand the 
+         list of options that are shown. It utilizes teh checkbox hack. -->
         <label for="toggle-v2" class="show-more">
           <div class="unchecked">
             <div class="sidebar-link">
@@ -829,6 +874,10 @@
             </div>            
           </div>
 
+
+          <!-- Show less button. Clicking on the show less button will reduce the 
+           number of options listed. The options that were shown when clicking
+           show more will be hidden. -->
           <div class="checked">
             <div class="sidebar-link">
               <div class="icon-area">
@@ -855,6 +904,7 @@
           </div>
         </div>
 
+        <!-- Youtube Premium link -->
         <a  href="https://www.youtube.com/premium">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -877,6 +927,7 @@
           </div>
         </a>
         
+        <!-- Youtube TV link -->
         <a  href="https://tv.youtube.com/welcome/?utm_source=youtube_web&utm_medium=ep&utm_campaign=home&ve=34273&utm_servlet=prod&rd_rsn=asi&zipcode=92704"
         target="_blank">
           <div class="sidebar-link"> 
@@ -899,6 +950,7 @@
           </div>
         </a>
         
+        <!-- Youtube Music link -->
         <a  href="https://music.youtube.com/" target="_blank">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -920,7 +972,7 @@
             </div>
           </div>
         </a>
-        
+        <!-- Youtube Kids link -->
         <a  href="https://www.youtubekids.com/?source=youtube_web" target="_blank">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -971,6 +1023,8 @@
       </div>
 
       <div class="sidebar-section">
+
+        <!-- Report link -->
         <a  href="https://www.youtube.com/reporthistory">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -991,8 +1045,12 @@
       </div>
     </nav>
 
+    <!-- This sidebar is similar to big-sidebar-v2. However, this does not come with its
+     own header. It has the exact same buttons and functions. -->
     <nav class="big-sidebar">
       <div class="sidebar-section">
+
+        <!-- Home link -->
         <a  href="https://www.youtube.com/">
           <div class="sidebar-link-home">
             <div class="icon-area">
@@ -1009,6 +1067,7 @@
           </div>
         </a>
         
+        <!-- Youtube shorts link -->
         <a  href="https://www.youtube.com/shorts/">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1031,6 +1090,7 @@
       </div>
 
       <div class="sidebar-section">
+        <!-- Subscriptions link -->
         <a href="https://www.youtube.com/feed/subscriptions">
           <div class="sidebar-title-container">
             <div class="sidebar-title">
@@ -1048,7 +1108,7 @@
           </div>
         </a>
         
-
+        <!-- channel 1 link -->
         <a  href="https://www.youtube.com/@ohnepixelraw">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1061,6 +1121,7 @@
           </div>
         </a>
         
+        <!-- channel 2 link -->
         <a  href="https://www.youtube.com/@ohnepixel">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1073,6 +1134,7 @@
           </div>
         </a>
         
+        <!-- channel 3 link -->
         <a  href="https://www.youtube.com/@moomoocowjonny">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1087,6 +1149,7 @@
       </div>
 
       <div class="sidebar-section">
+        <!-- You link -->
         <a href="https://www.youtube.com/feed/you">
           <div class="sidebar-title-container">
             <div class="sidebar-title">
@@ -1104,6 +1167,7 @@
           </div>
         </a>
 
+        <!-- Your channel link (WIP) -->
         <a href="">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1122,7 +1186,7 @@
           </div>
         </a>
         
-
+        <!-- History link -->
         <a  href="https://www.youtube.com/feed/history">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1141,6 +1205,7 @@
           </div>
         </a>
 
+        <!-- Playlists link -->
         <a  href="https://www.youtube.com/feed/playlists">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1158,6 +1223,7 @@
           </div>
         </a>
         
+        <!-- Watch later link -->
         <a  href="https://www.youtube.com/playlist?list=WL">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1176,6 +1242,7 @@
           </div>
         </a>
         
+        <!-- Liked Videos link -->
         <a  href="https://www.youtube.com/playlist?list=LL">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1199,6 +1266,7 @@
           </div>
         </a>
         
+        <!-- Your videos link (WIP) -->
         <a href="">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1216,7 +1284,7 @@
           </div>
         </a>
         
-
+        <!-- Downloads link -->
         <a  href="https://www.youtube.com/feed/downloads">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1242,6 +1310,7 @@
           </div>
         </div>
 
+        <!-- Shopping Link -->
         <a  href="https://www.youtube.com/channel/UCkYQyvc_i9hXEo4xic9Hh2g">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1262,6 +1331,7 @@
           </div>
         </a>
         
+        <!-- Music link -->
         <a  href="https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1280,6 +1350,7 @@
           </div>
         </a>
 
+        <!-- Movies and TV link -->
         <a  href="https://www.youtube.com/feed/storefront">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1328,6 +1399,7 @@
           </div>
         </a>
         
+        <!-- Gaming link -->
         <a class="link extra" href="https://www.youtube.com/gaming">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1348,6 +1420,7 @@
           </div>
         </a>
         
+        <!-- News link -->
         <a class="link extra" href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"> 
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1367,6 +1440,7 @@
           </div>
         </a>
         
+        <!-- Sports link -->
         <a class="link extra" href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1387,6 +1461,7 @@
           </div>
         </a>
         
+        <!-- Courses link -->
         <a class="link extra" href="https://www.youtube.com/feed/courses_destination">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1406,6 +1481,7 @@
           </div>
         </a>
         
+        <!-- Fashiion and Beauty link -->
         <a class="link extra" href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1425,6 +1501,7 @@
           </div>
         </a>
         
+        <!-- Podcasts link -->
         <a class="link extra" href="https://www.youtube.com/podcasts">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1443,6 +1520,7 @@
           </div>
         </a>
         
+        <!-- Playables link -->
         <a class="link extra" href="https://www.youtube.com/playables">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1466,6 +1544,8 @@
           </div>
         </a>
         
+        <!-- Show more button. Clicking on the show more button will display
+         all the divs with extra. -->
         <label for="toggle" class="show-more">
           <div class="unchecked">
             <div class="sidebar-link">
@@ -1484,6 +1564,8 @@
             </div>            
           </div>
 
+          <!-- Show less button. Clicking on the show less button will hide all
+           the divs with class = "extra" -->
           <div class="checked">
             <div class="sidebar-link">
               <div class="icon-area">
@@ -1510,6 +1592,7 @@
           </div>
         </div>
 
+        <!-- Youtube premium link -->
         <a  href="https://www.youtube.com/premium">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1532,6 +1615,7 @@
           </div>
         </a>
         
+        <!-- Youtube TV link -->
         <a  href="https://tv.youtube.com/welcome/?utm_source=youtube_web&utm_medium=ep&utm_campaign=home&ve=34273&utm_servlet=prod&rd_rsn=asi&zipcode=92704"
         target="_blank">
           <div class="sidebar-link"> 
@@ -1554,6 +1638,7 @@
           </div>
         </a>
         
+        <!-- Youtube music link -->
         <a  href="https://music.youtube.com/" target="_blank">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1576,6 +1661,7 @@
           </div>
         </a>
         
+        <!-- Youtube kids link -->
         <a  href="https://www.youtubekids.com/?source=youtube_web" target="_blank">
           <div class="sidebar-link"> 
             <div class="icon-area">
@@ -1626,6 +1712,7 @@
       </div>
 
       <div class="sidebar-section">
+        <!-- Report link -->
         <a  href="https://www.youtube.com/reporthistory">
           <div class="sidebar-link">
             <div class="icon-area">
@@ -1648,6 +1735,8 @@
 
     <header class="header">
       <div class="left-section">
+        <!-- Hamburger icon. Clicking on the icon will toggle between the different types of 
+         headers. The headers differ depending on the screen size. -->
         <label class="hamburger-menu-container" for="hamburger">
           <svg xmlns="http://www.w3.org/2000/svg"
           height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
@@ -1721,6 +1810,8 @@
 
       <div class="middle-section">
         <input class="search-bar" type="text" placeholder="Search">
+
+        <!-- Search button -->
         <button class="search-button">
           <svg xmlns="http://www.w3.org/2000/svg"
           height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
@@ -1733,6 +1824,7 @@
           </div>
         </button>
 
+        <!-- voice search button (only for display) -->
         <button class="voice-search-button">
           <div class="voice-search-icon">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -1753,6 +1845,7 @@
 
       <div class="right-section">
         <div class="create-container">
+          <!-- create pop up -->
           <button popovertarget="create-pop-up" class="create-button">
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -1771,7 +1864,10 @@
           </button>
         </div>
 
+        <!-- clicking on the create button will display this div. I utilized popovers
+         to display and hide the menus -->
         <div popover id="create-pop-up" class="create-menu">
+          <!-- upload link (WIP) -->
           <a href="">
             <div class="pop-up-link">
               <div class="pop-up-icon-area">
@@ -1789,6 +1885,7 @@
             </div>
           </a>
 
+          <!-- go live link (WIP) -->
           <a href="">
             <div class="pop-up-link">
               <div class="pop-up-icon-area">
@@ -1811,6 +1908,7 @@
             </div>
           </a>
 
+          <!-- Create post link (WIP) -->
           <a href="">
             <div class="pop-up-link">
               <div class="pop-up-icon-area">
@@ -1834,6 +1932,7 @@
         </div>
         
         <div class="notifications-container">
+          <!-- notifications button -->
           <button popovertarget="notifications-pop-up" class="notifications-button">
             <div class="notifications-icon">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -1855,6 +1954,8 @@
             </div>
           </button>
           
+          <!-- Clicking on the notifications button will display the notifications menu.
+           I utilized the popover technique to display and hide the popup menu as well. -->
           <div popover id="notifications-pop-up" class="notifications-pop-up">
             <div class="notifications-header">
               Notifications
@@ -1904,6 +2005,9 @@
           </div>
         </div>
         
+        <!-- Profile button. Clicking on the profile button allows the user
+         to open up the profile menu. I used the popover technique again
+         to display the menu. -->
         <div class="profile-container">
           <button popovertarget="profile-menu" class="profile-button">
             <img class="current-user-pic" src="pfps/my-profile.jpg">
@@ -1933,6 +2037,7 @@
               </div>
             </div>
 
+            <!-- The profile menu utilizes the same CSS styles as the pop up from small-sidebar. -->
             <div class="profile-menu-section">
               <a href="https://myaccount.google.com/u/0/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&gar=WzgwLCIyMzMzODciXQ&tab=rk&hl=en">
                 <div class="pop-up-link">
@@ -1954,6 +2059,10 @@
                 </div>
               </a>
               
+              <!-- We can have popovers inside of popovers. In this case, the 
+               switch acc menu is inside of the profile menu. However, doing this
+               requires an extra step. When we open this pop up, we have to hide
+               the profile popover. -->
               <button popovertarget="switch-acc-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
@@ -1982,6 +2091,7 @@
                 </div>
               </button>
 
+              <!-- Sign out link -->
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
@@ -2002,6 +2112,8 @@
             </div>
 
             <div class="profile-menu-section">
+
+              <!-- Youtube studio link -->
               <a href="">
                 <div class="pop-up-link">
                   <div class="pop-up-icon-area">
@@ -2027,6 +2139,7 @@
                 </div>
               </a>
 
+              <!-- Memberships link -->
               <a href="https://www.youtube.com/paid_memberships?ybp=mAEK">
                 <div class="pop-up-link">
                   <div class="pop-up-icon-area">
@@ -2058,6 +2171,7 @@
 
             
             <div class="profile-menu-section">
+              <!-- Data in youtube link -->
               <a href="https://myaccount.google.com/u/0/yourdata/youtube?hl=en">
                 <div class="pop-up-link">
                   <div class="pop-up-icon-area">
@@ -2079,6 +2193,9 @@
                 </div>
               </a>
         
+              <!-- This is another popover inside of the profile popover.
+               Like the switch acc popover, we have to hide the profile hideover
+               when we open this popover. -->
               <button popovertarget="appearance-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
@@ -2169,6 +2286,7 @@
                 </div>
               </button>
 
+              <!-- Language popover inside of the profile popover -->
               <button popovertarget="location-menu" class="pop-up-link" 
               onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
@@ -2203,6 +2321,7 @@
                 </div>
               </button>
 
+              <!-- Keyboard shortcuts popover inside of the profile popover -->
               <button popovertarget="shortcut-modal" class="pop-up-link"
               onclick="document.getElementById('profile-menu').hidePopover();">
                 <div class="pop-up-icon-area">
@@ -2232,6 +2351,7 @@
             </div>
 
             <div class="profile-menu-section">
+              <!-- Settings link -->
               <a href="https://www.youtube.com/account">
                 <div class="pop-up-link">
                   <div class="pop-up-icon-area">
@@ -2261,6 +2381,7 @@
             </div>
 
             <div class="profile-menu-section">
+              <!-- Help link -->
               <div class="pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
@@ -2282,6 +2403,7 @@
               </div>
 
               <div class="pop-up-link">
+                <!-- Send feedback link -->
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2302,6 +2424,7 @@
             </div>
           </div>
 
+          <!-- Switch acc menu -->
           <div popover id="switch-acc-menu" class="switch-acc-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="submenu-icon-area arrow-symbol"
@@ -2406,6 +2529,7 @@
             </div>
           </div>
 
+          <!-- Appearance menu -->
           <div popover id="appearance-menu" class="appearance-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
@@ -2464,6 +2588,7 @@
             </div>
           </div>
 
+          <!-- Language menu -->
           <div popover id="language-menu" class="language-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
@@ -3170,6 +3295,7 @@
             </div>
           </div>
 
+          <!-- Privacy menu -->
           <div popover id="restricted-menu" class="restricted-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
@@ -3208,14 +3334,12 @@
 
                     </div>
                   </label>
-
-
-
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Location menu -->
           <div popover id="location-menu" class="location-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
@@ -4125,6 +4249,7 @@
             </div>
           </div>
 
+          <!-- Keyboard shortcuts modal -->
           <div popover id="shortcut-modal" class="shortcut-modal">
             <div class="modal-title">
               Keyboard Shortcuts
@@ -4437,6 +4562,9 @@
               </div>
             </div>
 
+            <!-- Clicking on the dismiss button will hide the shortcut modal. We use the same
+             technique as closing hte profile menu for closing the moda since it is essentially
+             a popover. -->
             <div class="modal-footer">
               <button class="dismiss-button" onclick="document.getElementById('shortcut-modal').hidePopover();">
                 Dismiss
@@ -4450,6 +4578,7 @@
     </header>
     
     <main>
+      <!-- Videos. The video grid has different dimensions based on the screen size.  -->
       <section class="video-grid">
         <a href="https://www.youtube.com/watch?v=RjfQJlMeh1o">
           <div class="video-preview">
@@ -4548,6 +4677,7 @@
         </a>
       </section>
 
+      <!-- Youtube shorts preview -->
       <section class="shorts-container">
         <div class="shorts-container-title">
           <div class="shorts-container-title-left">

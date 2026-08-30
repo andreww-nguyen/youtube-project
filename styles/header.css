@@ -2,6 +2,12 @@
 {
   height: 55px;
   display: flex;
+
+  /* Use space-between so all the sections are evenly spacd. 
+  Also use position: fixed to ensure that the header stays at
+  the top of the screen at all times. Without it, the header
+  would be at the top of the PAGE, but not the top of the
+  SCREEN. */
   justify-content: space-between;
   position: fixed;
   top: 0px;
@@ -75,6 +81,8 @@
 .youtube-apps-container,
 .notifications-button
 {
+  /* We put position: relative here so we can use positon: absolute
+  later on. It allows us to put an element inside of these. */
   position: relative;
   display: flex;
   align-items: center;
@@ -106,6 +114,8 @@
 .youtube-apps-container .tooltip,
 .notifications-button .tooltip
 {
+  /* We combine position: absolute with positon: relative so 
+  these elements stay inside the element at all times. */
   position: absolute;
   background-color: grey;
   color: white;
@@ -128,6 +138,8 @@
 .youtube-apps-container:hover .tooltip,
 .notifications-button:hover .tooltip
 {
+  /* When we hover over the buttons, then the tooltips show themselves.
+  They initially have opacity: 0. */
   opacity: 1;
 }
 
@@ -174,6 +186,9 @@
   border-radius: 20px;
   position: relative;
   border-style: none;
+
+  /* We establish an anchor name so we can anchor other elements.
+  This is an alternative way instead of using postion: relative/ absolute. */
   anchor-name: --create-button;
 
   font-weight: 550;
@@ -205,6 +220,11 @@
   border-style: none;
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
+
+  /* We can use a position anhcor to decide where the create-menu will
+  be positioned. The top of the create-menu will be at the bottom of the anchor,
+  and the left of the create-menu will be aligned with the left of the 
+  anchor. */
   position-anchor: --create-button;
   top: anchor(bottom);
   left: anchor(left);
@@ -266,6 +286,9 @@
 
 .notifications-pop-up
 {
+  /* Good t o have these default values so we can position it later.
+  Without these, the popover will be positoned in teh center of 
+  the page. */
   margin: 0px;
   inset: auto;
 
@@ -326,6 +349,7 @@
   padding-bottom: 25px;
 }
 
+/* targeting the bell icon in the notifications menu */
 .big-notification-container svg path 
 {
   fill: grey;
@@ -371,6 +395,9 @@
   border-style: none;
   border-radius: 15px;
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
+
+  /* This allows the menu to be responsive. The menu will always be
+  100% of the viewport height - 10px from the bottom/ */
   max-height: calc(100vh - 10px);
   overflow-y: auto;
 
@@ -378,6 +405,9 @@
   top: anchor(top);
   right: anchor(left);
   margin-right: 15px;
+
+  /* This ensures that the rest of the page does not scroll when we are inside
+  this menu. */
   overscroll-behavior: contain;
 }
 
@@ -673,6 +703,9 @@
   z-index: 700;
 
   background-color: white;
+
+  /* Creates a responsive modal. Width is 83% of the screen
+  and height will be 90% of the screen. */
   width: 83%;
   height: 90%;
   border-radius: 10px;

@@ -1,6 +1,6 @@
+/* Default padding for all screen sizes */
 @media (max-width: 789px)
 {
-
   body
   {
     padding-left: 16px;
@@ -23,12 +23,14 @@
     padding-left: 260px;
   }
   
+  /* If the smaller sidebar is showing, then the padding is 90px */
   body:has(#hamburger:checked) 
   {
     padding-left: 90px;
   }
 }
 
+/* Grey background for when sidebar-v2 is showing */
 .grey-background
 {
   position: fixed;
