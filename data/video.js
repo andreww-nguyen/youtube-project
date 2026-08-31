@@ -21,6 +21,41 @@ class Video
     this.#dateReleased = videoDetails.dateReleased;
   }
 
+  getVideoCode()
+  {
+    return this.#videoCode;
+  }
+
+  getThumbnail()
+  {
+    return this.#thumbnail;
+  }
+
+  getTitle()
+  {
+    return this.#title;
+  }
+
+  getLength()
+  {
+    return this.#length;
+  }
+
+  getCreator()
+  {
+    return this.#creator;
+  }
+
+  getCreatorPfp()
+  {
+    return this.#creatorPfp;
+  }
+
+  getViews()
+  {
+    return this.#views;
+  }
+
   getDateReleased()
   {
     return this.#dateReleased;

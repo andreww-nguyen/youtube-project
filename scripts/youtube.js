@@ -2,8 +2,72 @@ import { videos } from '../data/video.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
-console.log(videos);
 
+let videosPerRow = getVideosPerRow(window.innerWidth);
+renderVideoGrid(videosPerRow);
+
+window.addEventListener('resize', () =>
+{
+  videosPerRow = getVideosPerRow(window.innerWidth);
+  renderVideoGrid(videosPerRow);
+
+});
+
+function renderVideoGrid(videosPerRow)
+{
+  let videoGridHTML = '';
+  for (let i = 0; i < videosPerRow; i++)
+  {
+    const video = videos[i];
+    videoGridHTML += 
+    `
+      <a href="https://www.youtube.com/watch?v=${video.getVideoCode()}">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="thumbnails/plays-forza-for-first-time.avif">
+
+            <div class="video-time">
+              1:11:55
+            </div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img class="profile-pic" src="pfps/ohnepixel-raw.jpg">
+            </div>
+
+            <div class="video-info">
+              <p class="video-title">
+                Driving Noob Plays Forza For The First Time Ever...
+              </p>
+      
+              <p class="channel-name">
+                ohnepixel raw
+              </p>
+          
+              <p class="video-stats">
+                415k views &#183; 4 weeks ago
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+  document.querySelectorAll('.js-video-grid')[0].innerHTML = videoGridHTML;
+}
+
+function getVideosPerRow(windowWidth)
+{
+  if (windowWidth <= 560)
+    return 1; 
+  else if (windowWidth > 560 && windowWidth <= 1099)
+    return 2;
+  else if (windowWidth > 1099 && windowWidth <= 2999)
+    return 3;
+  else if (windowWidth > 2999)
+    return 4;
+}
 
 // const date1 = dayjs('2026-08-16');
 // const today = dayjs();
