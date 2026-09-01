@@ -2,7 +2,6 @@ import { videos } from '../data/video.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
-
 let videosPerRow = getVideosPerRow(window.innerWidth);
 renderVideoGrid(videosPerRow);
 
@@ -13,40 +12,43 @@ window.addEventListener('resize', () =>
 
 });
 
+
 function renderVideoGrid(videosPerRow)
 {
   let videoGridHTML = '';
   for (let i = 0; i < videosPerRow; i++)
   {
     const video = videos[i];
+
+    // generate the HTML for the video
     videoGridHTML += 
     `
       <a href="https://www.youtube.com/watch?v=${video.getVideoCode()}">
         <div class="video-preview">
           <div class="thumbnail-row">
-            <img class="thumbnail" src="thumbnails/plays-forza-for-first-time.avif">
+            <img class="thumbnail" src="../thumbnails/${video.getThumbnail()}">
 
             <div class="video-time">
-              1:11:55
+              ${video.getLength()}
             </div>
           </div>
 
           <div class="video-info-grid">
             <div class="channel-picture">
-              <img class="profile-pic" src="pfps/ohnepixel-raw.jpg">
+              <img class="profile-pic" src="../pfps/${video.getCreatorPfp()}">
             </div>
 
             <div class="video-info">
               <p class="video-title">
-                Driving Noob Plays Forza For The First Time Ever...
+                ${video.getTitle()}
               </p>
       
               <p class="channel-name">
-                ohnepixel raw
+                ${video.getCreator()}
               </p>
           
               <p class="video-stats">
-                415k views &#183; 4 weeks ago
+                ${video.getViews()} views &#183; ${calculateElapsedTime(video.getDateReleased())} ago
               </p>
             </div>
           </div>
@@ -55,6 +57,45 @@ function renderVideoGrid(videosPerRow)
     `;
   }
   document.querySelectorAll('.js-video-grid')[0].innerHTML = videoGridHTML;
+}
+
+function calculateElapsedTime(dateReleased)
+{
+  const today = dayjs();
+  let timeBetween = today.diff(dateReleased, 'day');
+  let timeFormat = 'days'
+
+  // years
+  if (timeBetween > 365)
+  {
+    timeBetween /= 365;
+    timeFormat = 'year';
+  }
+
+  // months
+  else if (timeBetween < 365 && timeBetween > 30)
+  {
+    timeBetween /= 30;
+    timeFormat = 'month';
+  }
+
+  // weeks
+  else if (timeBetween < 30 && timeBetween > 7)
+  {
+    timeBetween /= 7;
+    timeFormat = 'week';
+  }
+
+  // days
+  else if (timeBetween < 7)
+    timeFormat = 'day';
+
+  // grammar rules
+  if (Math.floor(timeBetween) !== 1)
+    timeFormat += 's';
+
+  // return the date elasped as a string
+  return `${Math.floor(timeBetween)} ${timeFormat}`;
 }
 
 function getVideosPerRow(windowWidth)

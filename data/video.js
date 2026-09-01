@@ -93,7 +93,7 @@ export let videos =
     length: '2:04:27',
     creator: 'ohnepixel raw',
     creatorPfp: 'ohnepixel-raw.jpg',
-    views: '205',
+    views: '205k',
     dateReleased: '2025-07-10'
   },
 
