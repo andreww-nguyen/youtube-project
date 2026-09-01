@@ -9,56 +9,79 @@ window.addEventListener('resize', () =>
 {
   videosPerRow = getVideosPerRow(window.innerWidth);
   renderVideoGrid(videosPerRow);
-
 });
 
-
+/**
+ * 
+ * @param {*} videosPerRow 
+ */
 function renderVideoGrid(videosPerRow)
 {
   let videoGridHTML = '';
   for (let i = 0; i < videosPerRow; i++)
   {
-    const video = videos[i];
-
     // generate the HTML for the video
-    videoGridHTML += 
-    `
-      <a href="https://www.youtube.com/watch?v=${video.getVideoCode()}">
-        <div class="video-preview">
-          <div class="thumbnail-row">
-            <img class="thumbnail" src="../thumbnails/${video.getThumbnail()}">
-
-            <div class="video-time">
-              ${video.getLength()}
-            </div>
-          </div>
-
-          <div class="video-info-grid">
-            <div class="channel-picture">
-              <img class="profile-pic" src="../pfps/${video.getCreatorPfp()}">
-            </div>
-
-            <div class="video-info">
-              <p class="video-title">
-                ${video.getTitle()}
-              </p>
-      
-              <p class="channel-name">
-                ${video.getCreator()}
-              </p>
-          
-              <p class="video-stats">
-                ${video.getViews()} views &#183; ${calculateElapsedTime(video.getDateReleased())} ago
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-    `;
+    videoGridHTML += generateVideoHTML(videos[i])
   }
   document.querySelectorAll('.js-video-grid')[0].innerHTML = videoGridHTML;
+  videoGridHTML = '';
+
+  // generate HTML for bottom videos
+  for (let i = videosPerRow; i < videos.length; i++)
+  {
+    // generate the HTML for the video
+    videoGridHTML += generateVideoHTML(videos[i])
+  }
+  document.querySelectorAll('.js-video-grid')[1].innerHTML = videoGridHTML;
 }
 
+/**
+ * 
+ * @param {*} video 
+ * @returns 
+ */
+function generateVideoHTML(video)
+{
+  return `
+    <a href="https://www.youtube.com/watch?v=${video.getVideoCode()}">
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="../thumbnails/${video.getThumbnail()}">
+
+          <div class="video-time">
+            ${video.getLength()}
+          </div>
+        </div>
+
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img class="profile-pic" src="../pfps/${video.getCreatorPfp()}">
+          </div>
+
+          <div class="video-info">
+            <p class="video-title">
+              ${video.getTitle()}
+            </p>
+    
+            <p class="channel-name">
+              ${video.getCreator()}
+            </p>
+        
+            <p class="video-stats">
+              ${video.getViews()} views &#183; ${calculateElapsedTime(video.getDateReleased())} ago
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  `;
+}
+
+/**
+ * 
+ * @param {*} dateReleased 
+ * @returns 
+ */
 function calculateElapsedTime(dateReleased)
 {
   const today = dayjs();
@@ -66,21 +89,21 @@ function calculateElapsedTime(dateReleased)
   let timeFormat = 'days'
 
   // years
-  if (timeBetween > 365)
+  if (timeBetween >= 365)
   {
     timeBetween /= 365;
     timeFormat = 'year';
   }
 
   // months
-  else if (timeBetween < 365 && timeBetween > 30)
+  else if (timeBetween >= 30)
   {
     timeBetween /= 30;
     timeFormat = 'month';
   }
 
   // weeks
-  else if (timeBetween < 30 && timeBetween > 7)
+  else if (timeBetween >= 7)
   {
     timeBetween /= 7;
     timeFormat = 'week';
@@ -98,6 +121,11 @@ function calculateElapsedTime(dateReleased)
   return `${Math.floor(timeBetween)} ${timeFormat}`;
 }
 
+/**
+ * 
+ * @param {*} windowWidth 
+ * @returns 
+ */
 function getVideosPerRow(windowWidth)
 {
   if (windowWidth <= 560)
