@@ -1,4 +1,4 @@
-import { videos } from '../data/video.js'
+import { videos } from '../data/videos.js'
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
@@ -132,9 +132,9 @@ function getVideosPerRow(windowWidth)
     return 1; 
   else if (windowWidth > 560 && windowWidth <= 1099)
     return 2;
-  else if (windowWidth > 1099 && windowWidth <= 2999)
+  else if (windowWidth > 1099 && windowWidth <= 1999)
     return 3;
-  else if (windowWidth > 2999)
+  else if (windowWidth > 1999)
     return 4;
 }
 

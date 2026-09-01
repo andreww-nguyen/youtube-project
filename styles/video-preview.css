@@ -2,8 +2,8 @@
 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 13px;
-  margin-bottom: 15px;
+  row-gap: clamp(2rem, 10vw, 2.25rem);
+  column-gap: clamp(0.1rem, 3vw, 0.2rem);
 }
 
 .video-preview
@@ -27,7 +27,7 @@
 .thumbnail
 {
   width: 100%;
-  border-radius: 13px;
+  border-radius: 20px;
 }
 
 .video-time
@@ -220,7 +220,7 @@
 .shorts-thumbnail
 {
   width: 100%;
-  border-radius: 13px;
+  border-radius: 20px;
 }
 
 .shorts-info
@@ -263,7 +263,7 @@
 }
 
 /* Three videos per row */
-@media (min-width: 1099.1px) and (max-width: 2999px)
+@media (min-width: 1099.1px) and (max-width: 1999px)
 {
   .video-grid 
   {
@@ -272,7 +272,7 @@
 }
 
 /* Four videos per row */
-@media (min-width: 2999.1px)
+@media (min-width: 1999.1px)
 {
   .video-grid
   {
