@@ -24,15 +24,14 @@
   <body>
     <!-- inputs and labels for the functionality of the hamburger icon. Inputs and labels
     are linked to a button to make it work (checkbox hack) -->
-    <input type="checkbox" id="grey-background" hidden>
+    <!-- <input type="checkbox" id="grey-background" hidden>
     <input type="checkbox" id="hamburger" hidden>
-    <label for="hamburger" class="grey-background"></label>
-
+    <label for="hamburger" class="grey-background"></label> -->
     <!-- Credits to Youtube.com for ALL sidebar-icons (copied directly from inspect element) -->
 
     <!-- smaller version of the sidebar. Displayed when the user clicks the hamburger icon
     or when the screen size is small enough. -->
-    <nav class="small-sidebar">
+    <nav class="js-small-sidebar small-sidebar">
       <!-- Youtube Home link -->
       <a  href="https://www.youtube.com/">
         <div class="small-sidebar-link">
@@ -288,7 +287,7 @@
 
     <!-- Very similar to big-sidebar. However, this comes with its own header. Only displayed when
     the screen conditions are met OR if the user displays with the hamburger icon. -->
-    <nav class="big-sidebar-v2">
+    <nav class="js-big-sidebar-v2 big-sidebar-v2">
       <div class="header-sidebar">
         <!-- hides/ displays the big-sidebar-v2 and displays/ hides the gray background.
         Utilizes the checkbox hack for these functions. -->
@@ -1047,9 +1046,8 @@
 
     <!-- This sidebar is similar to big-sidebar-v2. However, this does not come with its
      own header. It has the exact same buttons and functions. -->
-    <nav class="big-sidebar">
+    <nav class="js-big-sidebar big-sidebar">
       <div class="sidebar-section">
-
         <!-- Home link -->
         <a  href="https://www.youtube.com/">
           <div class="sidebar-link-home">
@@ -1737,14 +1735,14 @@
       <div class="left-section">
         <!-- Hamburger icon. Clicking on the icon will toggle between the different types of 
          headers. The headers differ depending on the screen size. -->
-        <label class="hamburger-menu-container" for="hamburger">
+        <button class="js-hamburger-menu-container hamburger-menu-container">
           <svg xmlns="http://www.w3.org/2000/svg"
           height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
             <path d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1
               0 000 2h16a1 1 0 000-2Z">
             </path>
           </svg>
-        </label>
+        </button>
 
         <!-- Link to Youtube -->
         <a href="https://www.youtube.com/" target="">
@@ -4629,142 +4627,7 @@
           </div>
         </div>
         
-        <div class="js-shorts-grid shorts-grid">
-          <a href="https://www.youtube.com/shorts/J096BP85o_U">
-            <div class="shorts-preview">
-              <div class="shorts-thumbnail-row">
-                <img class="shorts-thumbnail" src="shorts-thumbnails/dillon-klein-montage.avif">
-              </div>
-  
-              <div class="shorts-info">
-                <div class="shorts-title">
-                  Dillon Klein leads Trojans to #3 in the nation. #ncaavolleyball #usc #volleyball #haikyuuxyn
-                </div>
-  
-                <button popovertarget="shorts-menu-1" class="icon-area shorts-menu-button-1">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
-                      0 000-4Z">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="shorts-views">
-                22k views
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.youtube.com/shorts/7pfDf-Udx2c">
-            <div class="shorts-preview">
-              <div class="shorts-thumbnail-row">
-                <img class="shorts-thumbnail" src="shorts-thumbnails/ohnepixel-artist.avif">
-              </div>
-  
-              <div class="shorts-info">
-                <div class="shorts-title">
-                  "be your own biggest fan" 💀
-                </div>
-  
-                <button popovertarget="shorts-menu-2" class="icon-area shorts-menu-button-2">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
-                      0 000-4Z">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="shorts-views">
-                1.7M views
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.youtube.com/shorts/mIYeMJPZq_A">
-            <div class="shorts-preview">
-              <div class="shorts-thumbnail-row">
-                <img class="shorts-thumbnail" src="shorts-thumbnails/moni-nikolov-montage.avif">
-              </div>
-  
-              <div class="shorts-info">
-                <div class="shorts-title">
-                  Undefeated season? #LongBeachState #MoniNikolov #ncaavolleyball #volleyball
-                </div>
-  
-                <button popovertarget="shorts-menu-3" class="icon-area shorts-menu-button-3">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
-                      0 000-4Z">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="shorts-views">
-                16k views
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.youtube.com/shorts/XvtkAdn6pTE">
-            <div class="shorts-preview">
-              <div class="shorts-thumbnail-row">
-                <img class="shorts-thumbnail" src="shorts-thumbnails/mk-3-hitting.avif">
-              </div>
-  
-              <div class="shorts-info">
-                <div class="shorts-title">
-                  Destined to Hit😈#volleyball #vertical
-                </div>
-  
-                <button popovertarget="shorts-menu-4" class="icon-area shorts-menu-button-4">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
-                      0 000-4Z">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="shorts-views">
-                189k views
-              </div>
-            </div>
-          </a>
-          
-          <a href="https://www.youtube.com/shorts/C0am1M4eu2s">
-            <div class="shorts-preview">
-              <div class="shorts-thumbnail-row">
-                <img class="shorts-thumbnail" src="shorts-thumbnails/ohnepixel-igl.avif">
-              </div>
-  
-              <div class="shorts-info">
-                <div class="shorts-title">
-                  this gotta be scripted 💀
-                </div>
-  
-                <button popovertarget="shorts-menu-5" class="icon-area shorts-menu-button-5">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                  height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
-                      0 000-4Z">
-                    </path>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="shorts-views">
-                758k views
-              </div>
-            </div>
-          </a>
-        </div>
+        <div class="js-shorts-grid shorts-grid"></div>
 
         <!-- <div popover id="shorts-menu-1" class="shorts-menu-1">
           <div class="pop-up-link">
@@ -5034,6 +4897,9 @@
 
       <section class="js-video-grid video-grid"></section>
     </main>
+
+    <div class="js-grey-background grey-background"></div>
+
 
     <script type="module" src="scripts/youtube.js"></script>
   </body>

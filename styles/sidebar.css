@@ -1,5 +1,6 @@
 .big-sidebar 
 {
+  display: none;
   flex-direction: column;
   background-color: white;
   position: fixed;
@@ -21,6 +22,7 @@
 
 .big-sidebar-v2 
 {
+  display: none;
   flex-direction: column;
   background-color: white;
   position: fixed;
@@ -39,6 +41,7 @@
 
 .small-sidebar
 {
+  display: none;
   width: 64px;
   flex-direction: column;
   background-color: white;
@@ -241,7 +244,6 @@
   cursor: pointer;
 }
 
-
 .arrow-symbol 
 {
   display: flex;
@@ -294,7 +296,12 @@
   display: none;
 }
 
-#toggle:checked~.extra 
+.displayed
+{
+  display: flex;
+}
+
+/* #toggle:checked~.extra 
 {
   display: flex;
   flex: 1;
@@ -326,7 +333,7 @@
 #toggle-v2:checked~.show-more .unchecked 
 {
   display: none;
-}
+} */
 
 .header-sidebar
 {
@@ -338,7 +345,7 @@
 }
 
 /* No sidebars showing when screen is below 789. */
-@media (max-width: 789px)
+/* @media (max-width: 789px)
 {
   .big-sidebar
   {
@@ -348,9 +355,9 @@
   .small-sidebar
   {
     display: none;
-  }
+  } */
 
-  .big-sidebar-v2 {
+  /* .big-sidebar-v2 {
     display: none;
   }
 
@@ -362,11 +369,11 @@
   body:has(#hamburger:checked) .grey-background {
     z-index: 200;
     display: flex;
-  }
-}
+  } */
+/* } */
 
 /* smaller sidebar when the screen is between 790px and 1349px */
-@media (min-width: 789.1px) and (max-width: 1349px)
+/* @media (min-width: 789.1px) and (max-width: 1349px)
 {
 
   .big-sidebar 
@@ -382,9 +389,9 @@
   .big-sidebar-v2
   {
     display: none;
-  }
+  } */
 
-  body:has(#hamburger:checked) .small-sidebar 
+  /* body:has(#hamburger:checked) .small-sidebar 
   {
     display: none;
   }
@@ -399,11 +406,11 @@
   {
     z-index: 250;
     display: flex;
-  }
-}
+  } */
+/* // } */
 
 /* large sidebar when the screen is over 1350px */
-@media (min-width: 1350px)
+/* @media (min-width: 1350px)
 {
   .big-sidebar
   {
@@ -418,8 +425,8 @@
   .small-sidebar    
   {
     display: none;
-  }
-    
+  } */
+/*     
   body:has(#hamburger:checked) .big-sidebar 
   {
     display: none;
@@ -428,5 +435,5 @@
   body:has(#hamburger:checked) .small-sidebar 
   {
     display: flex;
-  }
-}
+  } */
+/* } */

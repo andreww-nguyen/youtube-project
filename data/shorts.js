@@ -69,6 +69,13 @@ export let shorts =
     thumbnail: 'ohnepixel-igl.avif',
     title: `this gotta be scripted 💀`,
     views: '758k'
+  },
+
+  {
+    code: 'CnsgsREEj7I',
+    thumbnail: 'favorite-song.avif',
+    title: "Simeon “Moni” Nikolov 🇧🇬 #ncaavolleyball #volleyball",
+    views: '2.1K'
   }
 ]
 

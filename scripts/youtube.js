@@ -2,17 +2,117 @@ import { videos } from '../data/videos.js'
 import { shorts } from '../data/shorts.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
+let noSideBar = false;
+let showSmallSideBar = false;
+let underWindowWidth = false;
+
 
 renderVideoGrid(getVideosPerRow(window.innerWidth));
 renderShortsGrid(getShortsPerRow(window.innerWidth));
+handleScreenSizeSideBar(window.innerWidth);
+renderSideBar();
+
 
 window.addEventListener('resize', () =>
 {
   renderVideoGrid(getVideosPerRow(window.innerWidth));
   renderShortsGrid(getShortsPerRow(window.innerWidth));
 
+  // handle screen sizing for sidebar
+  handleScreenSizeSideBar(window.innerWidth);
+  console.log(`under window size: ${underWindowWidth}`);
+  console.log(`sidebar showing: ${showSmallSideBar}`);
+  console.log(`no sidebar: ${noSideBar}`);
+  renderSideBar();
 });
 
+
+document.querySelector('.js-hamburger-menu-container').addEventListener('click', () =>
+{
+  console.log('clicked menu icon');
+
+  // change status of small side bar
+  if (!showSmallSideBar)
+    showSmallSideBar = true;
+  else if (showSmallSideBar)
+    showSmallSideBar = false;
+
+  // render the sidebar
+  renderSideBar();
+});
+
+function renderSideBar()
+{
+  if (noSideBar)
+  {
+    document.body.style = "padding-left: 16px";
+
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+    document.querySelector('.js-small-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar').classList.remove('displayed');
+  }
+
+  else if (showSmallSideBar && !underWindowWidth)
+  {
+    // show small sidebar
+    document.querySelector('.js-small-sidebar').classList.add('displayed');
+
+    // change margins to adjust for sidebar
+    document.body.style = "padding-left: 90px";
+
+    // hide the other sidebars
+    document.querySelector('.js-big-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+  }
+
+  else if (showSmallSideBar && underWindowWidth)
+  {
+    // show small sidebar
+    document.querySelector('.js-small-sidebar').classList.add('displayed');
+
+    // change margins to adjust for sidebar
+    document.body.style = "padding-left: 90px";
+
+    // hide the other sidebars
+    document.querySelector('.js-big-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+
+  }
+
+  else if (!showSmallSideBar && !underWindowWidth)
+  {
+    // display the big sidebar
+    document.querySelector('.js-big-sidebar').classList.add('displayed');
+
+    // change margins to adjust for sidebar
+    document.body.style = "padding-left: 260px";
+
+    // hide the other sidebars
+    document.querySelector('.js-small-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+  }
+
+  else if (!showSmallSideBar && underWindowWidth)
+  {
+    // display big sidebar v2 and the grey overlay
+    document.querySelector('.js-big-sidebar-v2').classList.add('displayed');
+    document.querySelector('.js-grey-background').classList.add('displayed');
+
+    // hide the other sidebars
+    document.querySelector('.js-small-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar').classList.remove('displayed');
+  }
+}
+
+
+/**
+ * 
+ * @param {*} shortsPerRow 
+ */
 function renderShortsGrid(shortsPerRow)
 {
   let shortsGridHTML = '';
@@ -194,4 +294,32 @@ function getShortsPerRow(windowWidth)
     return 5;
   else if (windowWidth > 1999)
     return 6;
+}
+
+function handleScreenSizeSideBar(windowWidth)
+{
+  // size dimensions
+  // no sidebar
+  if (windowWidth <= 789)
+  {
+    noSideBar = true;
+    showSmallSideBar = false;
+    underWindowWidth = true;
+  }
+
+  // small sidebar with big sidebar v2
+  else if (windowWidth <= 1349)
+  {
+    noSideBar = false;
+    showSmallSideBar = true;
+    underWindowWidth = true;
+  }
+
+  // small sidebar with big sidebar
+  else if (windowWidth > 1349)
+  {
+    noSideBar = false;
+    showSmallSideBar = false;
+    underWindowWidth = false;
+  }
 }

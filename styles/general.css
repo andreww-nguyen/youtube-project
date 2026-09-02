@@ -1,34 +1,4 @@
-/* Default padding for all screen sizes */
-@media (max-width: 789px)
-{
-  body
-  {
-    padding-left: 16px;
-  }
-}
 
-/* change body's left padding to accomodate for smaller sidebar */
-@media (min-width: 789.1px) and (max-width: 1349px)
-{
-  body
-  {
-    padding-left: 90px;
-  }
-}
-/* change body's padding to accomodate for larger sidebar */
-@media (min-width: 1350px)
-{
-  body 
-  {
-    padding-left: 260px;
-  }
-  
-  /* If the smaller sidebar is showing, then the padding is 90px */
-  body:has(#hamburger:checked) 
-  {
-    padding-left: 90px;
-  }
-}
 
 /* Grey background for when sidebar-v2 is showing */
 .grey-background
@@ -40,6 +10,7 @@
   right: 0px;
   background-color: rgba(0, 0, 0, 0.47);
   display: none;
+  z-index: 101;
   overscroll-behavior: contain;
 }
 
@@ -67,4 +38,36 @@ button
 {
   background-color: white;
   border-style: none;
+}
+
+/* Default padding for all screen sizes */
+@media (max-width: 789px)
+{
+  body
+  {
+    padding-left: 16px;
+  }
+}
+
+/* change body's left padding to accomodate for smaller sidebar */
+@media (min-width: 789.1px) and (max-width: 1349px)
+{
+  body
+  {
+    padding-left: 90px;
+  }
+}
+/* change body's padding to accomodate for larger sidebar */
+@media (min-width: 1350px)
+{
+  body 
+  {
+    padding-left: 260px;
+  }
+  
+  /* If the smaller sidebar is showing, then the padding is 90px */
+  /* body:has(#hamburger:checked) 
+  {
+    padding-left: 90px;
+  } */
 }
