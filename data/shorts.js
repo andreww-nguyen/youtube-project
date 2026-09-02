@@ -42,24 +42,24 @@ export let shorts =
     title: "Dillon Klein leads Trojans to #3 in the nation. #ncaavolleyball #usc #volleyball #haikyuuxyn",
     views: '22k'
   },
+  
+  {
+    code: '7pfDf-Udx2c',
+    thumbnail: 'ohnepixel-artist.avif',
+    title: `"be your own biggest fan" 💀`,
+    views: '1.7M'
+  },
 
   {
     code: 'mIYeMJPZq_A',
     thumbnail: 'moni-nikolov-montage.avif',
     title: `Undefeated season? #LongBeachState #MoniNikolov #ncaavolleyball #volleyball`,
-    views: '1.7M'
-  },
-
-  {
-    code: '7pfDf-Udx2c',
-    thumbnail: 'ohnepixel-artist.avif',
-    title: `"be your own biggest fan" 💀`,
     views: '16k'
   },
 
   {
     code: 'XvtkAdn6pTE',
-    thumbnail: 'ohnepixel-artist.avif',
+    thumbnail: 'mk-3-hitting.avif',
     title: `Destined to Hit😈#volleyball #vertical`,
     views: '189k'
   },
@@ -71,3 +71,8 @@ export let shorts =
     views: '758k'
   }
 ]
+
+shorts = shorts.map((shortDetails) =>
+{
+  return new Short(shortDetails);
+});

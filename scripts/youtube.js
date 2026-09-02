@@ -1,15 +1,57 @@
 import { videos } from '../data/videos.js'
+import { shorts } from '../data/shorts.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
 
-let videosPerRow = getVideosPerRow(window.innerWidth);
-renderVideoGrid(videosPerRow);
+renderVideoGrid(getVideosPerRow(window.innerWidth));
+renderShortsGrid(getShortsPerRow(window.innerWidth));
 
 window.addEventListener('resize', () =>
 {
-  videosPerRow = getVideosPerRow(window.innerWidth);
-  renderVideoGrid(videosPerRow);
+  renderVideoGrid(getVideosPerRow(window.innerWidth));
+  renderShortsGrid(getShortsPerRow(window.innerWidth));
+
 });
+
+function renderShortsGrid(shortsPerRow)
+{
+  let shortsGridHTML = '';
+  for (let i = 0; i < shortsPerRow; i++)
+  {
+    let short = shorts[i];
+    shortsGridHTML += 
+    `
+      <a href="https://www.youtube.com/shorts/${short.getShortsCode()}">
+        <div class="shorts-preview">
+          <div class="shorts-thumbnail-row">
+            <img class="shorts-thumbnail" src="../shorts-thumbnails/${short.getThumbnail()}">
+          </div>
+
+          <div class="shorts-info">
+            <div class="shorts-title">
+              ${short.getTitle()}
+            </div>
+
+            <button class="icon-area shorts-menu-button-5">
+              <svg xmlns="http://www.w3.org/2000/svg"
+              height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2
+                  0 000-4Z">
+                </path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="shorts-views">
+            ${short.getViews()} views
+          </div>
+        </div>
+      </a>
+    `;
+  };
+
+  document.querySelector('.js-shorts-grid').innerHTML = shortsGridHTML;
+}
 
 /**
  * 
@@ -130,46 +172,26 @@ function getVideosPerRow(windowWidth)
 {
   if (windowWidth <= 560)
     return 1; 
-  else if (windowWidth > 560 && windowWidth <= 1099)
+  else if (windowWidth <= 1099)
     return 2;
-  else if (windowWidth > 1099 && windowWidth <= 1999)
+  else if (windowWidth <= 1999)
     return 3;
   else if (windowWidth > 1999)
     return 4;
 }
 
-// const date1 = dayjs('2026-08-16');
-// const today = dayjs();
-
-// // Get difference in days
-// let timeBetween = today.diff(date1, 'day');
-// let timeFormat = 'days'
-
-// console.log(timeBetween);
-// if (timeBetween > 365)
-// {
-//   timeBetween /= 365;
-//   timeFormat = 'year';
-// }
-// else if (timeBetween < 365 && timeBetween > 30)
-// {
-//   timeBetween /= 30;
-//   timeFormat = 'month';
-// }
-// else if (timeBetween < 30 && timeBetween > 7)
-// {
-//   timeBetween /= 7;
-//   timeFormat = 'week';
-// }
-// else if (timeBetween < 7)
-// {
-//   timeFormat = 'day';
-// }
-
-// // grammar rules
-// if (timeBetween !== 1)
-// {
-//   timeFormat += 's';
-// }
-
-// console.log(`${Math.floor(timeBetween)} ${timeFormat}`)
+/**
+ * 
+ * @param {*} windowWidth 
+ */
+function getShortsPerRow(windowWidth)
+{
+  if (windowWidth <= 560)
+    return 2;
+  else if (windowWidth <= 1099)
+    return 3;
+  else if (windowWidth <= 1999)
+    return 5;
+  else if (windowWidth > 1999)
+    return 6;
+}
