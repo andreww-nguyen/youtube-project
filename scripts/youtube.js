@@ -6,7 +6,13 @@ let noSideBar = false;
 let showSmallSideBar = false;
 let underWindowWidth = false;
 
+const noSidebarQuery = window.matchMedia('(max-width: 789px)');
+const compactSidebarQuery = window.matchMedia('(min-width: 790px) and (max-width: 1349px)');
 
+noSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
+compactSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
+
+// render stuff
 renderVideoGrid(getVideosPerRow(window.innerWidth));
 renderShortsGrid(getShortsPerRow(window.innerWidth));
 handleScreenSizeSideBar(window.innerWidth);
@@ -19,11 +25,9 @@ window.addEventListener('resize', () =>
   renderShortsGrid(getShortsPerRow(window.innerWidth));
 
   // handle screen sizing for sidebar
-  handleScreenSizeSideBar(window.innerWidth);
   console.log(`under window size: ${underWindowWidth}`);
   console.log(`sidebar showing: ${showSmallSideBar}`);
   console.log(`no sidebar: ${noSideBar}`);
-  renderSideBar();
 });
 
 
@@ -298,28 +302,24 @@ function getShortsPerRow(windowWidth)
 
 function handleScreenSizeSideBar(windowWidth)
 {
-  // size dimensions
-  // no sidebar
-  if (windowWidth <= 789)
+  if (noSidebarQuery.matches)
   {
     noSideBar = true;
     showSmallSideBar = false;
     underWindowWidth = true;
   }
-
-  // small sidebar with big sidebar v2
-  else if (windowWidth <= 1349)
+  else if (compactSidebarQuery.matches)
   {
     noSideBar = false;
     showSmallSideBar = true;
     underWindowWidth = true;
   }
-
-  // small sidebar with big sidebar
-  else if (windowWidth > 1349)
+  else
   {
     noSideBar = false;
     showSmallSideBar = false;
     underWindowWidth = false;
   }
+
+  renderSideBar();
 }
