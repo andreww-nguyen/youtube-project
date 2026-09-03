@@ -18,7 +18,6 @@ renderShortsGrid(getShortsPerRow(window.innerWidth));
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
-
 window.addEventListener('resize', () =>
 {
   renderVideoGrid(getVideosPerRow(window.innerWidth));
@@ -30,6 +29,15 @@ window.addEventListener('resize', () =>
   console.log(`no sidebar: ${noSideBar}`);
 });
 
+document.querySelector('.js-hamburger-menu-container-v2').addEventListener('click', () =>
+{
+  if (!showSmallSideBar)
+    showSmallSideBar = true;
+  else if (showSmallSideBar)
+    showSmallSideBar = false;
+
+  renderSideBar();
+});
 
 document.querySelector('.js-hamburger-menu-container').addEventListener('click', () =>
 {
@@ -43,6 +51,14 @@ document.querySelector('.js-hamburger-menu-container').addEventListener('click',
 
   // render the sidebar
   renderSideBar();
+
+  // handle case where screen size is low enough for no sidebar but user clicks
+  // hamburger icon
+  if (noSideBar)
+  {
+    document.querySelector('.js-big-sidebar-v2').classList.add('displayed');
+    document.querySelector('.js-grey-background').classList.add('displayed');
+  }
 });
 
 function renderSideBar()
@@ -111,7 +127,6 @@ function renderSideBar()
     document.querySelector('.js-big-sidebar').classList.remove('displayed');
   }
 }
-
 
 /**
  * 
