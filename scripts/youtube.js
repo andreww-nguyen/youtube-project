@@ -29,6 +29,26 @@ window.addEventListener('resize', () =>
   console.log(`no sidebar: ${noSideBar}`);
 });
 
+window.addEventListener('click', (event) =>
+{
+  if (clickedOutside(event) && !showSmallSideBar)
+  {
+    showSmallSideBar = true;
+    document.querySelector('.js-small-sidebar').classList.add('displayed');
+    document.body.style = "padding-left: 90px";
+    
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+  }
+  else if (clickedOutside(event) && noSideBar)
+  {
+    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+    document.querySelector('.js-grey-background').classList.remove('displayed');
+    document.querySelector('.js-small-sidebar').classList.remove('displayed');
+    document.querySelector('.js-big-sidebar').classList.remove('displayed');
+  }
+})
+
 document.querySelector('.js-hamburger-menu-container-v2').addEventListener('click', () =>
 {
   if (!showSmallSideBar)
@@ -41,8 +61,6 @@ document.querySelector('.js-hamburger-menu-container-v2').addEventListener('clic
 
 document.querySelector('.js-hamburger-menu-container').addEventListener('click', () =>
 {
-  console.log('clicked menu icon');
-
   // change status of small side bar
   if (!showSmallSideBar)
     showSmallSideBar = true;
@@ -60,6 +78,12 @@ document.querySelector('.js-hamburger-menu-container').addEventListener('click',
     document.querySelector('.js-grey-background').classList.add('displayed');
   }
 });
+
+function clickedOutside(event)
+{
+  if (document.querySelector('.js-grey-background').contains(event.target))
+    return true;
+}
 
 function renderSideBar()
 {
