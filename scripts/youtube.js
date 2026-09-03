@@ -63,68 +63,37 @@ document.querySelector('.js-hamburger-menu-container').addEventListener('click',
 
 function renderSideBar()
 {
-  if (noSideBar)
-  {
-    document.body.style = "padding-left: 16px";
+  // hide all the the sidebars
+  document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
+  document.querySelector('.js-grey-background').classList.remove('displayed');
+  document.querySelector('.js-small-sidebar').classList.remove('displayed');
+  document.querySelector('.js-big-sidebar').classList.remove('displayed');
 
-    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
-    document.querySelector('.js-grey-background').classList.remove('displayed');
-    document.querySelector('.js-small-sidebar').classList.remove('displayed');
-    document.querySelector('.js-big-sidebar').classList.remove('displayed');
-  }
+  if (noSideBar)
+    document.body.style.paddingLeft = "16px";
 
   else if (showSmallSideBar && !underWindowWidth)
   {
-    // show small sidebar
     document.querySelector('.js-small-sidebar').classList.add('displayed');
-
-    // change margins to adjust for sidebar
     document.body.style = "padding-left: 90px";
-
-    // hide the other sidebars
-    document.querySelector('.js-big-sidebar').classList.remove('displayed');
-    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
-    document.querySelector('.js-grey-background').classList.remove('displayed');
   }
 
   else if (showSmallSideBar && underWindowWidth)
   {
-    // show small sidebar
     document.querySelector('.js-small-sidebar').classList.add('displayed');
-
-    // change margins to adjust for sidebar
     document.body.style = "padding-left: 90px";
-
-    // hide the other sidebars
-    document.querySelector('.js-big-sidebar').classList.remove('displayed');
-    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
-    document.querySelector('.js-grey-background').classList.remove('displayed');
-
   }
 
   else if (!showSmallSideBar && !underWindowWidth)
   {
-    // display the big sidebar
     document.querySelector('.js-big-sidebar').classList.add('displayed');
-
-    // change margins to adjust for sidebar
     document.body.style = "padding-left: 260px";
-
-    // hide the other sidebars
-    document.querySelector('.js-small-sidebar').classList.remove('displayed');
-    document.querySelector('.js-big-sidebar-v2').classList.remove('displayed');
-    document.querySelector('.js-grey-background').classList.remove('displayed');
   }
 
   else if (!showSmallSideBar && underWindowWidth)
   {
-    // display big sidebar v2 and the grey overlay
     document.querySelector('.js-big-sidebar-v2').classList.add('displayed');
     document.querySelector('.js-grey-background').classList.add('displayed');
-
-    // hide the other sidebars
-    document.querySelector('.js-small-sidebar').classList.remove('displayed');
-    document.querySelector('.js-big-sidebar').classList.remove('displayed');
   }
 }
 
