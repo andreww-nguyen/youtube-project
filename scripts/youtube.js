@@ -22,11 +22,6 @@ window.addEventListener('resize', () =>
 {
   renderVideoGrid(getVideosPerRow(window.innerWidth));
   renderShortsGrid(getShortsPerRow(window.innerWidth));
-
-  // handle screen sizing for sidebar
-  console.log(`under window size: ${underWindowWidth}`);
-  console.log(`sidebar showing: ${showSmallSideBar}`);
-  console.log(`no sidebar: ${noSideBar}`);
 });
 
 window.addEventListener('click', (event) =>

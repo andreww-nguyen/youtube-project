@@ -7,7 +7,7 @@
   bottom: 0px;
   top: 54px;
   left: 0px;
-  width: 226px;
+  width: 236px;
   padding-left: 12px;
 
   /* Creates a responsive sidebar. The height will always be 100% 
@@ -291,10 +291,10 @@
   display: none;
 }
 
-.checked 
+/* .checked 
 {
   display: none;
-}
+} */
 
 .displayed
 {
