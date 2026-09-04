@@ -209,6 +209,10 @@
 
 .create-menu
 {
+  margin: 0px;
+  inset: auto;
+  padding: 0px;
+
   display: none;
   flex-direction: column;
   position: absolute;
