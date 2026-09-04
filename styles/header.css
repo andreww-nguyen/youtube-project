@@ -209,10 +209,9 @@
 
 .create-menu
 {
-  margin: 0px;
-  inset: auto;
-  padding: 0px;
-
+  display: none;
+  flex-direction: column;
+  position: absolute;
   width: 175px;
   background-color: white;
   padding-top: 8px;
@@ -228,14 +227,9 @@
   position-anchor: --create-button;
   top: anchor(bottom);
   left: anchor(left);
+  overflow: auto;
   margin-block-start: 7px;
   overscroll-behavior: contain;
-}
-
-.create-menu:popover-open
-{
-  display: flex;
-  flex-direction: column;
 }
 
 .upload-icon
@@ -822,4 +816,9 @@
 .dismiss-button:hover
 {
   background-color: rgba(0, 119, 255, 0.15)
+}
+
+.displayed
+{
+  display: flex;
 }
