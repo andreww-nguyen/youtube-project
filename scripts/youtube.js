@@ -18,6 +18,55 @@ renderShortsGrid(getShortsPerRow(window.innerWidth));
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
+document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-less').addEventListener('click', () =>
+{
+  document.querySelector('.js-big-sidebar-v2').querySelectorAll('.extra').forEach((link) =>
+  {
+    link.classList.remove('displayed');
+  });
+
+  // display the show more link again
+  document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').style.display = 'flex';
+}); 
+
+document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').addEventListener('click', () =>
+{
+  // show all the extra links
+  document.querySelector('.js-big-sidebar-v2').querySelectorAll('.extra').forEach((link) =>
+  {
+    link.classList.add('displayed');
+  });
+
+  // hide the show more link
+  document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').style.display = 'none';
+});
+
+
+document.querySelector('.js-big-sidebar').querySelector('.js-show-less').addEventListener('click', () =>
+{
+  document.querySelector('.js-big-sidebar').querySelectorAll('.extra').forEach((link) =>
+  {
+    link.classList.remove('displayed');
+  });
+
+  // display the show more link again
+  document.querySelector('.js-big-sidebar').querySelector('.js-show-more').style.display = 'flex';
+});
+
+document.querySelector('.js-big-sidebar').querySelector('.js-show-more').addEventListener('click', () =>
+{
+  // show all the extra links
+  document.querySelector('.js-big-sidebar').querySelectorAll('.extra').forEach((link) =>
+  {
+    link.classList.add('displayed');
+  });
+
+  // hide the show more link
+  document.querySelector('.js-big-sidebar').querySelector('.js-show-more').style.display = 'none';
+});
+
+
+
 window.addEventListener('resize', () =>
 {
   renderVideoGrid(getVideosPerRow(window.innerWidth));

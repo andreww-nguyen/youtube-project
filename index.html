@@ -612,7 +612,7 @@
 
       <!-- Explore link -->
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
+        <div class="sidebar-title-container" style="pointer-events: none;">
           <div class="sidebar-title">
             Explore
           </div>
@@ -679,15 +679,30 @@
           </div>
         </a>
 
+        <!-- Show more button. Pressing on the show more button will expand the 
+        list of options that are shown. It utilizes teh checkbox hack. -->
+        <div class="js-show-more sidebar-link">
+          <div class="icon-area">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+              <path d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 
+                16.914l6.707-6.707a1 1 0 000-1.414Z">
+              </path>
+            </svg>
+          </div>
+
+          <div class="sidebar-desc">
+            Show more
+          </div>
+        </div>  
+
         <!-- Both labels are on the page. Initially, the 'Show more' label is displayed and the 
         'Show less' label is hidden. The divs with class="extra" are also hidden. Only until after
         the 'Show more' label is checked will the "extra" class be displayed. The 'Show more' and
         'Show less' labels utilize the checkbox hack. -->
 
-        <input type="checkbox" id="toggle-v2" hidden>
-
         <!-- Live link -->
-        <a class="extra" href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
+        <a class="link extra" href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
           <div class="sidebar-link">
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -709,7 +724,7 @@
         </a>
         
         <!-- Gaming link -->
-        <a class="extra" href="https://www.youtube.com/gaming">
+        <a class="link extra" href="https://www.youtube.com/gaming">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -730,7 +745,7 @@
         </a>
         
         <!-- News link -->
-        <a class="extra" href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"> 
+        <a class="link extra" href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"> 
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -750,7 +765,7 @@
         </a>
         
         <!-- Sports link -->
-        <a class="extra" href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
+        <a class="link extra" href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -771,7 +786,7 @@
         </a>
         
         <!-- Courses link -->
-        <a class="extra" href="https://www.youtube.com/feed/courses_destination">
+        <a class="link extra" href="https://www.youtube.com/feed/courses_destination">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -791,7 +806,7 @@
         </a>
         
         <!-- Fashion and Beauty Link  -->
-        <a class="extra" href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
+        <a class="link extra" href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
           <div class="sidebar-link"> 
             <div class="icon-area">
               <svg xmlns="http://www.w3.org/2000/svg"
@@ -851,53 +866,29 @@
               Playables
             </div>
           </div>
-        </a>
-        
-        <!-- Show more button. Pressing on the show more button will expand the 
-         list of options that are shown. It utilizes teh checkbox hack. -->
-        <label for="toggle-v2" class="show-more">
-          <div class="unchecked">
-            <div class="sidebar-link">
-              <div class="icon-area">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                  <path d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 
-                    16.914l6.707-6.707a1 1 0 000-1.414Z">
-                  </path>
-                </svg>
-              </div>
-    
-              <div class="sidebar-desc">
-                Show more
-              </div>
-            </div>            
+        </a>          
+
+        <!-- Show less button. Clicking on the show less button will reduce the 
+          number of options listed. The options that were shown when clicking
+          show more will be hidden. -->
+        <div class="js-show-less sidebar-link extra">
+          <div class="icon-area">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+              <path d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 
+                7.086l-6.707 6.707a1 1 0 000 1.414Z">
+              </path>
+            </svg>
           </div>
 
-
-          <!-- Show less button. Clicking on the show less button will reduce the 
-           number of options listed. The options that were shown when clicking
-           show more will be hidden. -->
-          <div class="checked">
-            <div class="sidebar-link">
-              <div class="icon-area">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                  <path d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 
-                    7.086l-6.707 6.707a1 1 0 000 1.414Z">
-                  </path>
-                </svg>
-              </div>
-    
-              <div class="sidebar-desc">
-                Show less
-              </div>
-            </div>            
+          <div class="sidebar-desc">
+            Show less
           </div>
-        </label>
+        </div>            
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
+        <div class="sidebar-title-container" style="pointer-events: none;">
           <div class="sidebar-title">
             More from YouTube
           </div>
@@ -1369,12 +1360,27 @@
           </div>
         </a>
 
+        <!-- Show more button. Clicking on the show more button will display
+        all the divs with extra. -->
+        <div class="js-show-more sidebar-link">
+          <div class="icon-area">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+              <path d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 
+                16.914l6.707-6.707a1 1 0 000-1.414Z">
+              </path>
+            </svg>
+          </div>
+
+          <div class="sidebar-desc">
+            Show more
+          </div>
+        </div>
+
         <!-- Both labels are on the page. Initially, the 'Show more' label is displayed and the 
         'Show less' label is hidden. The divs with class="extra" are also hidden. Only until after
         the 'Show more' label is checked will the "extra" class be displayed. The 'Show more' and
         'Show less' labels utilize the checkbox hack. -->
-
-        <input type="checkbox" id="toggle" hidden>
 
         <a class="link extra" href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
           <div class="sidebar-link">
@@ -1540,51 +1546,28 @@
               Playables
             </div>
           </div>
-        </a>
-        
-        <!-- Show more button. Clicking on the show more button will display
-         all the divs with extra. -->
-        <label for="toggle" class="show-more">
-          <div class="unchecked">
-            <div class="sidebar-link">
-              <div class="icon-area">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                  <path d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 
-                    16.914l6.707-6.707a1 1 0 000-1.414Z">
-                  </path>
-                </svg>
-              </div>
-    
-              <div class="sidebar-desc">
-                Show more
-              </div>
-            </div>            
+        </a>            
+
+        <!-- Show less button. Clicking on the show less button will hide all
+          the divs with class = "extra" -->
+        <div class="js-show-less sidebar-link extra">
+          <div class="icon-area">
+            <svg xmlns="http://www.w3.org/2000/svg"
+            height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+              <path d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 
+                7.086l-6.707 6.707a1 1 0 000 1.414Z">
+              </path>
+            </svg>
           </div>
 
-          <!-- Show less button. Clicking on the show less button will hide all
-           the divs with class = "extra" -->
-          <div class="checked">
-            <div class="sidebar-link">
-              <div class="icon-area">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
-                  <path d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 
-                    7.086l-6.707 6.707a1 1 0 000 1.414Z">
-                  </path>
-                </svg>
-              </div>
-    
-              <div class="sidebar-desc">
-                Show less
-              </div>
-            </div>            
+          <div class="sidebar-desc">
+            Show less
           </div>
-        </label>
+        </div>            
       </div>
 
       <div class="sidebar-section">
-        <div class="sidebar-title-container">
+        <div class="sidebar-title-container" style="pointer-events: none;">
           <div class="sidebar-title">
             More from YouTube
           </div>
