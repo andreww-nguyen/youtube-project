@@ -1848,7 +1848,7 @@
 
         <!-- clicking on the create button will display this div. I utilized popovers
          to display and hide the menus -->
-        <div popover id="create-menu"class="js-create-menu create-menu">
+        <dialog popover id="create-menu"class="js-create-menu create-menu">
           <!-- upload link (WIP) -->
           <a href="">
             <div class="pop-up-link">
@@ -1911,7 +1911,7 @@
               </div>
             </div>
           </a>
-        </div>
+        </dialog>
         
         <div class="notifications-container">
           <!-- notifications button -->
@@ -1939,7 +1939,7 @@
           
           <!-- Clicking on the notifications button will display the notifications menu.
            I utilized the popover technique to display and hide the popup menu as well. -->
-          <div popover id="notifications-pop-up" class="notifications-pop-up">
+          <dialog popover id="notifications-pop-up" class="notifications-pop-up">
             <div class="notifications-header">
               Notifications
               <a href="https://www.youtube.com/account_notifications">
@@ -1985,7 +1985,7 @@
                 Subscribe to your favorite channels to get notified about their latest videos.
               </p>
             </div>
-          </div>
+          </dialog>
         </div>
         
         <!-- Profile button. Clicking on the profile button allows the user
@@ -2406,7 +2406,7 @@
           </div>
 
           <!-- Switch acc menu -->
-          <div popover id="switch-acc-menu" class="switch-acc-menu">
+          <dialog popover id="switch-acc-menu" class="switch-acc-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="js-back-to-menu submenu-icon-area arrow-symbol"
               data-element-id="switch-acc-menu">
@@ -2508,10 +2508,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </dialog>
 
           <!-- Appearance menu -->
-          <div popover id="appearance-menu" class="appearance-menu">
+          <dialog popover id="appearance-menu" class="appearance-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
               data-element-id="appearance-menu">
@@ -2567,10 +2567,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </dialog>
 
           <!-- Language menu -->
-          <div popover id="language-menu" class="language-menu">
+          <dialog popover id="language-menu" class="language-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
               data-element-id="language-menu">
@@ -3274,10 +3274,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </dialog>
 
           <!-- Privacy menu -->
-          <div popover id="restricted-menu" class="restricted-menu">
+          <dialog popover id="restricted-menu" class="restricted-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
               data-element-id="restricted-menu">
@@ -3318,10 +3318,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </dialog>
 
           <!-- Location menu -->
-          <div popover id="location-menu" class="location-menu">
+          <dialog popover id="location-menu" class="location-menu">
             <div class="submenu-header">
               <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
               data-element-id="location-menu">
@@ -4228,7 +4228,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </dialog>
 
           <!-- Keyboard shortcuts modal -->
           <div popover id="shortcut-modal" class="shortcut-modal">
@@ -4882,7 +4882,6 @@
     </main>
 
     <div class="js-grey-background grey-background"></div>
-
 
     <script type="module" src="scripts/youtube.js"></script>
   </body>
