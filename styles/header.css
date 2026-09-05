@@ -184,7 +184,6 @@
   padding-right: 14px;
   padding-left: 13px;
   border-radius: 20px;
-  position: relative;
   border-style: none;
 
   /* We establish an anchor name so we can anchor other elements.
@@ -213,9 +212,7 @@
   inset: auto;
   padding: 0px;
 
-  display: none;
   flex-direction: column;
-  position: absolute;
   width: 175px;
   background-color: white;
   padding-top: 8px;

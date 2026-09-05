@@ -19,16 +19,6 @@ handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
 
-document.querySelector('.js-create-button').addEventListener('click', () =>
-{
-  const createMenu = document.querySelector('.js-create-menu');
-
-  if (createMenu.classList.contains('displayed'))
-    createMenu.classList.remove('displayed');
-  else
-    createMenu.classList.add('displayed');
-});
-
 document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-less').addEventListener('click', () =>
 {
   document.querySelector('.js-big-sidebar-v2').querySelectorAll('.extra').forEach((link) =>
