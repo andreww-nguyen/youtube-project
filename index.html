@@ -1915,7 +1915,8 @@
         
         <div class="notifications-container">
           <!-- notifications button -->
-          <button popovertarget="notifications-pop-up" class="notifications-button">
+          <button popovertarget="notifications-pop-up" popovertargetaction="toggle"
+          class="notifications-button">
             <div class="notifications-icon">
               <svg xmlns="http://www.w3.org/2000/svg"
               height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
@@ -1991,7 +1992,8 @@
          to open up the profile menu. I used the popover technique again
          to display the menu. -->
         <div class="profile-container">
-          <button popovertarget="profile-menu" class="profile-button">
+          <button popovertarget="profile-menu" popovertargetaction="toggle"
+          class="profile-button">
             <img class="current-user-pic" src="pfps/my-profile.jpg">
           </button>
 
@@ -2045,7 +2047,7 @@
                switch acc menu is inside of the profile menu. However, doing this
                requires an extra step. When we open this pop up, we have to hide
                the profile popover. -->
-              <button popovertarget="switch-acc-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="switch-acc-menu" class="js-menu-link pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2178,7 +2180,7 @@
               <!-- This is another popover inside of the profile popover.
                Like the switch acc popover, we have to hide the profile hideover
                when we open this popover. -->
-              <button popovertarget="appearance-menu" class="pop-up-link" onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="appearance-menu" class="js-menu-link pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2206,8 +2208,7 @@
                 </div>
               </button>
 
-              <button popovertarget="language-menu" class="pop-up-link"
-              onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="language-menu" class="js-menu-link pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2239,8 +2240,7 @@
                 </div>
               </button>
 
-              <button popovertarget="restricted-menu" class="pop-up-link"
-              onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="restricted-menu" class="js-menu-link pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2269,8 +2269,7 @@
               </button>
 
               <!-- Language popover inside of the profile popover -->
-              <button popovertarget="location-menu" class="pop-up-link" 
-              onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="location-menu" class="js-menu-link pop-up-link">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -2409,8 +2408,8 @@
           <!-- Switch acc menu -->
           <div popover id="switch-acc-menu" class="switch-acc-menu">
             <div class="submenu-header">
-              <button popovertarget="profile-menu" class="submenu-icon-area arrow-symbol"
-              onclick="document.getElementById('switch-acc-menu').hidePopover();">
+              <button popovertarget="profile-menu" class="js-back-to-menu submenu-icon-area arrow-symbol"
+              data-element-id="switch-acc-menu">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                   <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
@@ -2514,8 +2513,8 @@
           <!-- Appearance menu -->
           <div popover id="appearance-menu" class="appearance-menu">
             <div class="submenu-header">
-              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
-              onclick="document.getElementById('appearance-menu').hidePopover();">
+              <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
+              data-element-id="appearance-menu">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                   <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
@@ -2573,8 +2572,8 @@
           <!-- Language menu -->
           <div popover id="language-menu" class="language-menu">
             <div class="submenu-header">
-              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
-              onclick="document.getElementById('language-menu').hidePopover();">
+              <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
+              data-element-id="language-menu">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                   <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
@@ -3280,8 +3279,8 @@
           <!-- Privacy menu -->
           <div popover id="restricted-menu" class="restricted-menu">
             <div class="submenu-header">
-              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
-              onclick="document.getElementById('restricted-menu').hidePopover();">
+              <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
+              data-element-id="restricted-menu">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                   <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0
@@ -3324,8 +3323,8 @@
           <!-- Location menu -->
           <div popover id="location-menu" class="location-menu">
             <div class="submenu-header">
-              <button popovertarget="profile-menu" class="pop-up-icon-area arrow-symbol"
-              onclick="document.getElementById('location-menu').hidePopover();">
+              <button popovertarget="profile-menu" class="js-back-to-menu pop-up-icon-area arrow-symbol"
+              data-element-id="location-menu">
                 <svg xmlns="http://www.w3.org/2000/svg"
                 height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
                   <path d="M10.293 4.293 2.586 12l7.707 7.706a1 1 0 101.414-1.413L6.414 13H20a1 1 0

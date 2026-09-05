@@ -287,6 +287,7 @@
   margin: 0px;
   inset: auto;
 
+  flex-direction: column;
   background-color: white;
   width: 490px;
   height: 650px;
@@ -305,7 +306,6 @@
 .notifications-pop-up:popover-open
 {
   display: flex;
-  flex-direction: column;
 }
 
 .notifications-header
@@ -386,6 +386,7 @@
   inset: auto;
   padding: 0px;
 
+  flex-direction: column;
   width: 300px;
   border-style: none;
   border-radius: 15px;
@@ -404,12 +405,6 @@
   /* This ensures that the rest of the page does not scroll when we are inside
   this menu. */
   overscroll-behavior: contain;
-}
-
-.profile-menu:popover-open
-{
-  display: flex;
-  flex-direction: column;
 }
 
 .profile-menu button
@@ -475,6 +470,7 @@
   inset: auto;
   padding: 0px;
   
+  flex-direction: column;
   background-color: white;
   border-style: none;
   border-radius: 15px;
@@ -486,14 +482,6 @@
   top: anchor(bottom);
   right: anchor(right);
   margin-top: 7px;
-}
-
-.switch-acc-menu:popover-open,
-.appearance-menu:popover-open,
-.restricted-menu:popover-open
-{
-  display: flex;
-  flex-direction: column;
 }
 
 .submenu-header .arrow-symbol
@@ -574,6 +562,7 @@
   inset: auto;
   padding: 0px;
   
+  flex-direction: column;
   background-color: white;
   border-style: none;
   border-radius: 15px;
@@ -589,13 +578,6 @@
   max-height: calc(100vh - 10px);
   overscroll-behavior: contain;
   
-}
-
-.langauge-menu:popover-open,
-.location-menu:popover-open
-{
-  display: flex;
-  flex-direction: column;
 }
 
 .toggle-restricted-container

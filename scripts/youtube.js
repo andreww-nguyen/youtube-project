@@ -18,6 +18,27 @@ renderShortsGrid(getShortsPerRow(window.innerWidth));
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
+document.querySelectorAll('.js-menu-link').forEach((link) =>
+{
+  link.addEventListener('click', () =>
+  {
+    // hide the menu popover when we open up a new popover
+    document.getElementById('profile-menu').hidePopover();
+  });
+});
+
+document.querySelectorAll('.js-back-to-menu').forEach((element) =>
+{
+  element.addEventListener('click', () =>
+  {
+    // retrieve the element id from the dataset attribute
+    const elementId = element.dataset.elementId;
+    
+    // hide the current menu
+    document.getElementById(elementId).hidePopover();
+  });
+});
+
 
 document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-less').addEventListener('click', () =>
 {

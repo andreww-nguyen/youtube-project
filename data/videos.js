@@ -122,7 +122,7 @@ export let videos =
   {
     code: 'KLmDAH0ppp8',
     thumbnail: 'hawaii-vs-japan.avif',
-    title: "I watched the entirety of skibidi toilet, it's not what you expect",
+    title: "US champion Hawaii uni(2022) vs Tsukuba uni(Japan) 1st set men's university volleyball match 2023",
     length: '23:56',
     creator: 'vb K Har',
     creatorPfp: 'vbK.jpg',
