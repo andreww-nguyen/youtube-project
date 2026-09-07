@@ -28,7 +28,6 @@ document.querySelectorAll('.js-dismiss-button').forEach((button) =>
   button.addEventListener('click', () =>
   {
     dialog.close();
-    openButton.setAttribute('aria-expanded', false);
     openButton.focus();
   });
 });
@@ -38,14 +37,9 @@ document.querySelectorAll('.js-modal-button').forEach((link) =>
   const dialogId = link.dataset.targetId;
   const dialog = document.querySelector(`#${dialogId}`);
 
-  // set up aria controls
-  link.setAttribute('aria-expanded', false);
-  link.setAttribute('aria-controls', dialogId);
-
   // opening the modal
   link.addEventListener('click', () =>
   {
-    link.setAttribute('aria-expanded', true);
     dialog.showModal();
   });
 });
