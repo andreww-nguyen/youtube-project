@@ -2096,7 +2096,6 @@
             </div>
 
             <div class="profile-menu-section">
-
               <!-- Youtube studio link -->
               <a href="">
                 <div class="pop-up-link">
@@ -2303,8 +2302,9 @@
               </button>
 
               <!-- Keyboard shortcuts popover inside of the profile popover -->
-              <button popovertarget="shortcut-modal" class="pop-up-link"
-              onclick="document.getElementById('profile-menu').hidePopover();">
+              <button popovertarget="shortcut-modal" class="js-modal-button pop-up-link"
+              data-target-id="shortcut-modal"
+              aria-haspopup="dialog">
                 <div class="pop-up-icon-area">
                   <div class="pop-up-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -4231,7 +4231,8 @@
           </dialog>
 
           <!-- Keyboard shortcuts modal -->
-          <div popover id="shortcut-modal" class="shortcut-modal">
+          <dialog id="shortcut-modal" class="shortcut-modal"
+          closedby="any">
             <div class="modal-title">
               Keyboard Shortcuts
             </div>
@@ -4547,11 +4548,11 @@
              technique as closing hte profile menu for closing the moda since it is essentially
              a popover. -->
             <div class="modal-footer">
-              <button class="dismiss-button" onclick="document.getElementById('shortcut-modal').hidePopover();">
+              <button class="js-dismiss-button dismiss-button">
                 Dismiss
               </button>
             </div>
-          </div>
+          </dialog>
           
           <div class="overlay"></div>
         </div>

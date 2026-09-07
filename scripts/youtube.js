@@ -18,6 +18,39 @@ renderShortsGrid(getShortsPerRow(window.innerWidth));
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
+
+document.querySelectorAll('.js-dismiss-button').forEach((button) =>
+{
+  const dialog = button.closest('dialog');
+  const dialogId = dialog.id;
+  const openButton = document.querySelector(`[data-target="${dialogId}"]`);
+
+  button.addEventListener('click', () =>
+  {
+    dialog.close();
+    openButton.setAttribute('aria-expanded', false);
+    openButton.focus();
+  });
+});
+
+document.querySelectorAll('.js-modal-button').forEach((link) =>
+{
+  const dialogId = link.dataset.targetId;
+  const dialog = document.querySelector(`#${dialogId}`);
+
+  // set up aria controls
+  link.setAttribute('aria-expanded', false);
+  link.setAttribute('aria-controls', dialogId);
+
+  // opening the modal
+  link.addEventListener('click', () =>
+  {
+    link.setAttribute('aria-expanded', true);
+    dialog.showModal();
+  });
+});
+
+
 document.querySelectorAll('.js-menu-link').forEach((link) =>
 {
   link.addEventListener('click', () =>
@@ -62,7 +95,6 @@ document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').addE
   // hide the show more link
   document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').style.display = 'none';
 });
-
 
 document.querySelector('.js-big-sidebar').querySelector('.js-show-less').addEventListener('click', () =>
 {
