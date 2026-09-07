@@ -12,6 +12,11 @@
   overscroll-behavior: contain;
 }
 
+dialog::backdrop
+{
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
 body
 {
   font-family: Roboto, Arial;
