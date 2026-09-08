@@ -1,14 +1,6 @@
-import { videos } from '../data/videos.js'
+import { videos, shuffleArray } from '../data/videos.js'
 import { shorts } from '../data/shorts.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-
-
-
-
-
-
-
-
 
 
 let noSideBar = false;
@@ -20,6 +12,10 @@ const compactSidebarQuery = window.matchMedia('(min-width: 790px) and (max-width
 
 noSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
 compactSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
+
+// randomize the order of the videos and shorts
+shuffleArray(videos);
+shuffleArray(shorts);
 
 // render stuff
 renderVideoGrid(getVideosPerRow(window.innerWidth));

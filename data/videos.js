@@ -333,3 +333,28 @@ videos = videos.map((videoDetails) =>
 {
   return new Video(videoDetails);
 });
+
+export function shuffleArray(array)
+{
+  let remainingElements = array.length;
+  let storedElem;
+  let randomElem;
+
+  while (remainingElements)
+  {
+    // retrieve a random element from the array
+    randomElem = Math.floor(Math.random() * remainingElements);
+  
+    // decrement the number of remaining elements in teh array
+    remainingElements--;
+  
+    // store the element at the end (not including the swapped elements)
+    storedElem = array[remainingElements];
+  
+    // move the random element to the end (not including swapped elements)
+    array[remainingElements] = array[randomElem];
+  
+    // move the stored element into the random element's index
+    array[randomElem] = storedElem;
+  }
+}
