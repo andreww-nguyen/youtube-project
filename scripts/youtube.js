@@ -2,6 +2,15 @@ import { videos } from '../data/videos.js'
 import { shorts } from '../data/shorts.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 
+
+
+
+
+
+
+
+
+
 let noSideBar = false;
 let showSmallSideBar = false;
 let underWindowWidth = false;
