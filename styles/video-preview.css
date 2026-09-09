@@ -134,25 +134,18 @@
   padding: 0px;
 
   flex-direction: column;
-  padding-right: 10px;
   background-color: white;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-block: 8px;
   border-style: none;
   box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
 
   top: anchor(bottom);
   right: anchor(right);
-  margin-block-start: 7px;
   overscroll-behavior: contain;
+  z-index: 500; 
 }
 
-/* .shorts-settings:popover-open,
-.shorts-menu
-{
-  display: flex;
-} */
 
 .shorts-settings
 {
@@ -192,6 +185,7 @@
 
 .shorts-info
 {
+  position: relative;
   display: grid;
   grid-template-columns: 4.5fr 1fr;
   margin-bottom: 5px;

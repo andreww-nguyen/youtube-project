@@ -11,6 +11,9 @@
   z-index: 101;
   overscroll-behavior: contain;
 }
+html {
+  scrollbar-gutter: stable;
+}
 
 dialog::backdrop
 {

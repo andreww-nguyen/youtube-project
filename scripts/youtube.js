@@ -24,25 +24,16 @@ setShortsAnchor(getShortsPerRow(window.innerWidth))
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
-
-function setShortsAnchor(shortsPerRow)
+document.querySelectorAll('.shorts-menu').forEach((popover) =>
 {
-  for (let i = 0; i < shortsPerRow; i++)
+  popover.addEventListener('toggle', () =>
   {
-    let short = shorts[i]
-    document.querySelector(`.shorts-menu-button-${short.getShortsCode()}`).style.anchorName
-      = `--${short.getShortsCode()}`
-  
-      document.querySelector(`.shorts-menu-${short.getShortsCode()}`).style.positionAnchor = 
-      `--${short.getShortsCode()}`
-
-      document.querySelector(`.shorts-info-${short.getShortsCode()}`).style.anchorName =
-      `--info-${short.getShortsCode()}`;
-
-      document.querySelector(`.shorts-menu-button-${short.getShortsCode()}`).style.positionAnchor = 
-      `--info-${short.getShortsCode()}`;
-  }
-}
+    if (popover.matches(':popover-open'))
+      document.documentElement.style.overflow = 'hidden';
+    else
+      document.documentElement.style.overflow = '';
+  });
+});
 
 document.querySelectorAll('.js-dismiss-button').forEach((button) =>
 {
@@ -68,7 +59,6 @@ document.querySelectorAll('.js-modal-button').forEach((link) =>
     dialog.showModal();
   });
 });
-
 
 document.querySelectorAll('.js-menu-link').forEach((link) =>
 {
@@ -138,8 +128,6 @@ document.querySelector('.js-big-sidebar').querySelector('.js-show-more').addEven
   document.querySelector('.js-big-sidebar').querySelector('.js-show-more').style.display = 'none';
 });
 
-
-
 window.addEventListener('resize', () =>
 {
   renderVideoGrid(getVideosPerRow(window.innerWidth));
@@ -196,6 +184,25 @@ document.querySelector('.js-hamburger-menu-container').addEventListener('click',
     document.querySelector('.js-grey-background').classList.add('displayed');
   }
 });
+
+function setShortsAnchor(shortsPerRow)
+{
+  for (let i = 0; i < shortsPerRow; i++)
+  {
+    let short = shorts[i]
+    document.querySelector(`.shorts-menu-button-${short.getShortsCode()}`).style.anchorName
+      = `--${short.getShortsCode()}`
+  
+      document.querySelector(`.shorts-menu-${short.getShortsCode()}`).style.positionAnchor = 
+      `--${short.getShortsCode()}`
+
+      document.querySelector(`.shorts-info-${short.getShortsCode()}`).style.anchorName =
+      `--info-${short.getShortsCode()}`;
+
+      document.querySelector(`.shorts-menu-button-${short.getShortsCode()}`).style.positionAnchor = 
+      `--info-${short.getShortsCode()}`;
+  }
+}
 
 function clickedOutside(event)
 {
