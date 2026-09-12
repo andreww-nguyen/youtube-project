@@ -261,7 +261,7 @@ function renderShortsGrid(shortsPerRow)
       <a href="https://www.youtube.com/shorts/${short.getShortsCode()}">
         <div class="shorts-preview">
           <div class="shorts-thumbnail-row">
-            <img class="shorts-thumbnail" src="../shorts-thumbnails/${short.getThumbnail()}">
+            <img class="shorts-thumbnail" src="./shorts-thumbnails/${short.getThumbnail()}">
           </div>
 
           <div class="shorts-info shorts-info-${short.getShortsCode()} ">
