@@ -398,7 +398,7 @@ function generateVideoHTML(video)
     <a href="https://www.youtube.com/watch?v=${video.getVideoCode()}">
       <div class="video-preview">
         <div class="thumbnail-row">
-          <img class="thumbnail" src="../thumbnails/${video.getThumbnail()}">
+          <img class="thumbnail" src="./thumbnails/${video.getThumbnail()}">
 
           <div class="video-time">
             ${video.getLength()}
@@ -407,7 +407,7 @@ function generateVideoHTML(video)
 
         <div class="video-info-grid">
           <div class="channel-picture">
-            <img class="profile-pic" src="../pfps/${video.getCreatorPfp()}">
+            <img class="profile-pic" src="./pfps/${video.getCreatorPfp()}">
           </div>
 
           <div class="video-info">
