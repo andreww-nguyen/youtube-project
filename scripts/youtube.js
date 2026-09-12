@@ -9,7 +9,6 @@ let underWindowWidth = false;
 
 const noSidebarQuery = window.matchMedia('(max-width: 789px)');
 const compactSidebarQuery = window.matchMedia('(min-width: 790px) and (max-width: 1349px)');
-
 noSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
 compactSidebarQuery.addEventListener('change', handleScreenSizeSideBar);
 
@@ -24,6 +23,15 @@ setShortsAnchor(getShortsPerRow(window.innerWidth))
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
+// event listener to re-render the webpage whenever the page is resized
+window.addEventListener('resize', () =>
+{
+  renderVideoGrid(getVideosPerRow(window.innerWidth));
+  renderShortsGrid(getShortsPerRow(window.innerWidth));
+  setShortsAnchor(getShortsPerRow(window.innerWidth))
+});
+
+// event listener for opening up the shorts-menu
 document.querySelectorAll('.shorts-menu').forEach((popover) =>
 {
   popover.addEventListener('toggle', () =>
@@ -35,6 +43,8 @@ document.querySelectorAll('.shorts-menu').forEach((popover) =>
   });
 });
 
+
+// event listener for the dismiss button in the keyboard shortcuts
 document.querySelectorAll('.js-dismiss-button').forEach((button) =>
 {
   const dialog = button.closest('dialog');
@@ -48,6 +58,7 @@ document.querySelectorAll('.js-dismiss-button').forEach((button) =>
   });
 });
 
+// event listener for opening up keyboard shortcuts
 document.querySelectorAll('.js-modal-button').forEach((link) =>
 {
   const dialogId = link.dataset.targetId;
@@ -60,6 +71,7 @@ document.querySelectorAll('.js-modal-button').forEach((link) =>
   });
 });
 
+// event listener for the different submenus in profile-menu
 document.querySelectorAll('.js-menu-link').forEach((link) =>
 {
   link.addEventListener('click', () =>
@@ -69,6 +81,8 @@ document.querySelectorAll('.js-menu-link').forEach((link) =>
   });
 });
 
+// event listener for the arrow button in the submenu (used to 
+// go back to profile-menu)
 document.querySelectorAll('.js-back-to-menu').forEach((element) =>
 {
   element.addEventListener('click', () =>
@@ -81,7 +95,7 @@ document.querySelectorAll('.js-back-to-menu').forEach((element) =>
   });
 });
 
-
+// event listener for the show-less button in the big-sidebarv2
 document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-less').addEventListener('click', () =>
 {
   document.querySelector('.js-big-sidebar-v2').querySelectorAll('.extra').forEach((link) =>
@@ -93,6 +107,7 @@ document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-less').addE
   document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').style.display = 'flex';
 }); 
 
+// event listener for the show more button in the big-sidebarv2
 document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').addEventListener('click', () =>
 {
   // show all the extra links
@@ -105,6 +120,7 @@ document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').addE
   document.querySelector('.js-big-sidebar-v2').querySelector('.js-show-more').style.display = 'none';
 });
 
+// event listener for the show less button in the big sidebar
 document.querySelector('.js-big-sidebar').querySelector('.js-show-less').addEventListener('click', () =>
 {
   document.querySelector('.js-big-sidebar').querySelectorAll('.extra').forEach((link) =>
@@ -116,6 +132,7 @@ document.querySelector('.js-big-sidebar').querySelector('.js-show-less').addEven
   document.querySelector('.js-big-sidebar').querySelector('.js-show-more').style.display = 'flex';
 });
 
+// event listener for the show more button in the big sidebar
 document.querySelector('.js-big-sidebar').querySelector('.js-show-more').addEventListener('click', () =>
 {
   // show all the extra links
@@ -128,13 +145,8 @@ document.querySelector('.js-big-sidebar').querySelector('.js-show-more').addEven
   document.querySelector('.js-big-sidebar').querySelector('.js-show-more').style.display = 'none';
 });
 
-window.addEventListener('resize', () =>
-{
-  renderVideoGrid(getVideosPerRow(window.innerWidth));
-  renderShortsGrid(getShortsPerRow(window.innerWidth));
-  setShortsAnchor(getShortsPerRow(window.innerWidth))
-});
-
+// event listener for when the user clicks outside the sidebar when 
+// sidebarv2 is displayed
 window.addEventListener('click', (event) =>
 {
   if (clickedOutside(event) && !showSmallSideBar)
@@ -155,6 +167,8 @@ window.addEventListener('click', (event) =>
   }
 })
 
+// event listener for when the user clicks the hamburger icon in the 
+// big-sidebarv2
 document.querySelector('.js-hamburger-menu-container-v2').addEventListener('click', () =>
 {
   if (!showSmallSideBar)
@@ -165,6 +179,7 @@ document.querySelector('.js-hamburger-menu-container-v2').addEventListener('clic
   renderSideBar();
 });
 
+// event listener for when the user clicks on the regular hamburger icon
 document.querySelector('.js-hamburger-menu-container').addEventListener('click', () =>
 {
   // change status of small side bar
@@ -185,6 +200,12 @@ document.querySelector('.js-hamburger-menu-container').addEventListener('click',
   }
 });
 
+/**
+ * creates the anchor name for each short and anchors the shorts-menu to
+ * each anchor
+ * 
+ * @param {Number} shortsPerRow the number of shorts that will be displayed
+ */
 function setShortsAnchor(shortsPerRow)
 {
   for (let i = 0; i < shortsPerRow; i++)
@@ -204,12 +225,22 @@ function setShortsAnchor(shortsPerRow)
   }
 }
 
+/**
+ * checks if the user clicked inside the grey-background
+ * 
+ * @param {event} event the click that happened on the page
+ * @returns boolean statement regarding whether or not the user
+ * clicked outside a certain element
+ */
 function clickedOutside(event)
 {
   if (document.querySelector('.js-grey-background').contains(event.target))
     return true;
 }
 
+/**
+ * contains the logic for 
+ */
 function renderSideBar()
 {
   // hide all the the sidebars
@@ -247,8 +278,11 @@ function renderSideBar()
 }
 
 /**
+ * generates the HTML for the shorts grid and renders the youtube page
+ * to display teh shorts grid
  * 
- * @param {*} shortsPerRow 
+ * @param {Number} shortsPerRow the number of shorts that are displayed on the page.
+ * Changes depending on teh screen size
  */
 function renderShortsGrid(shortsPerRow)
 {
@@ -364,8 +398,10 @@ function renderShortsGrid(shortsPerRow)
 }
 
 /**
+ * renders the youtube page to display the video grid
  * 
- * @param {*} videosPerRow 
+ * @param {Number} videosPerRow the number of videos that are displayed
+ * in each row. Changes depending on teh screen size
  */
 function renderVideoGrid(videosPerRow)
 {
@@ -388,9 +424,10 @@ function renderVideoGrid(videosPerRow)
 }
 
 /**
+ * generates the HTML to display the video on the web page
  * 
- * @param {*} video 
- * @returns 
+ * @param {Video} video the Video class containing all the information
+ * @returns a string containing the HTML associated with the video
  */
 function generateVideoHTML(video)
 {
@@ -430,9 +467,10 @@ function generateVideoHTML(video)
 }
 
 /**
+ * calculates the date between the release date and present day
  * 
- * @param {*} dateReleased 
- * @returns 
+ * @param {string} dateReleased the date the video was released
+ * @returns a string containing how long has elapsed since the video released
  */
 function calculateElapsedTime(dateReleased)
 {
@@ -475,8 +513,10 @@ function calculateElapsedTime(dateReleased)
 
 /**
  * 
- * @param {*} windowWidth 
- * @returns 
+ * calculates the number of videos that should be displayed per row
+ * 
+ * @param {Number} windowWidth the screen width as a number
+ * @returns the number of videos that should be displayed per row.
  */
 function getVideosPerRow(windowWidth)
 {
@@ -491,8 +531,10 @@ function getVideosPerRow(windowWidth)
 }
 
 /**
+ * calculates the number of shorts that should be displayed per row
  * 
- * @param {*} windowWidth 
+ * @param {Number} windowWidth the screen with as a number
+ * @returns the number of shorts that should be displayed per row
  */
 function getShortsPerRow(windowWidth)
 {
@@ -506,6 +548,11 @@ function getShortsPerRow(windowWidth)
     return 6;
 }
 
+/**
+ * handles all the side bar rendering using boolean statements
+ * 
+ * @param {Number} windowWidth the screen width as a number
+ */
 function handleScreenSizeSideBar(windowWidth)
 {
   if (noSidebarQuery.matches)
