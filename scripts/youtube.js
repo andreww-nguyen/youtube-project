@@ -23,6 +23,16 @@ setShortsAnchor(getShortsPerRow(window.innerWidth))
 handleScreenSizeSideBar(window.innerWidth);
 renderSideBar();
 
+// display the disclaimer
+document.getElementById('disclaimer-modal').showModal();
+
+// event listener for the close button in disclaimer
+document.querySelector('.js-disclaimer-close-button').addEventListener('click', () =>
+{
+  document.getElementById('disclaimer-modal').close();
+})
+
+
 // event listener to re-render the webpage whenever the page is resized
 window.addEventListener('resize', () =>
 {
